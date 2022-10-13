@@ -1,0 +1,93 @@
+:root {
+    // Colors
+    --primary-color-100: #2AA3DF;
+    --primary-color-200: #1C6BBA;
+    --primary-color-300: #153E8E;
+    // --primary-400: darken(var(--primary-color-200), 20%);
+    --secondary-color-100: #424242;
+    --secondary-color-200: #282828;
+    --secondary-color-300: #0F0F0F;
+    --background-color-100: #FFFFFF;
+    --background-color-200: #F0F2F4;
+    --background-color-300: #DDE0E4;
+    --background-color-400: #CCD1D7;
+    --background-color-500: #A7B0BC;
+    --background-color-600: #7E8EA3;
+    --text-color-100: #000000;
+    --text-color-200: #5B6167;
+    --text-color-300: #717A84;
+    --text-color-400: #A5ACB6;
+    --text-color-500: #DDE0E4;
+    --text-color-600: #FFFFFF;
+    --success-color-100: #88D890;
+    --success-color-200: #3EBD4B;
+    --success-color-300: #256F2C;
+    --fail-color-100: #F1A7A7;
+    --fail-color-200: #D92424;
+    --fail-color-300: #580E0E;
+    --warning-color-100: #F8D9AA;
+    --warning-color-200: #EB981C;
+    --warning-color-300: #674209;
+    --info-color-100: #A1C3F7;
+    --info-color-200: #4287EE;
+    --info-color-300: #1155BB;
+
+    // Border Size
+    --border-width-100: 1px;
+    --border-width-200: 2px;
+    --border-width-300: 4px;
+
+    // Border Radius
+    --border-radius-100: 5px;
+    --border-radius-200: 10px;
+    --border-radius-300: 20px;
+    --border-radius-400: 35px;
+
+    // Border Color
+    --border-color-100: #F0F2F4;
+    --border-color-200: #DDE0E4;
+    --border-color-300: #A5ACB6;
+
+    // Padding
+    --padding-100: 5px;
+    --padding-200: 10px;
+    --padding-300: 20px;
+    --padding-400: 30px;
+
+    // Margin
+    --margin-100: 5px;
+    --margin-200: 10px;
+    --margin-300: 20px;
+
+    // Gap
+    --gap-100: 5px;
+    --gap-200: 10px;
+    --gap-300: 20px;
+
+    // Font-size
+    --font-size-100: 12px; 
+    --font-size-200: 14px; 
+    --font-size-300: 16px; 
+    --font-size-400: 20px; 
+    --font-size-500: 24px; 
+    --font-size-600: 28px; 
+    --font-size-700: 42px; 
+    --font-size-800: 80px; 
+    --font-size-900: 160px; 
+
+    // Font-weight
+    --font-weight-300: 300; 
+    --font-weight-400: 400; 
+    --font-weight-500: 500; 
+    --font-weight-700: 700; 
+
+    // Font-weight
+    --line-height-100: 1; 
+    --line-height-200: 1.2; 
+    --line-height-300: 1.4; 
+
+    // Font-weight
+    --letter-space-100: 0; 
+    --letter-space-200: 0.3px; 
+    --letter-space-300: 0.6px; 
+}

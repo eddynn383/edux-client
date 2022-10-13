@@ -1,0 +1,14 @@
+.text {
+    font-size: 16px;
+    &--main {
+        width: 100%;
+        display: block;
+        text-align: left;
+    }
+}
+.no-link {
+    .text {
+        width: 100%;
+        text-align: left;
+    }
+}

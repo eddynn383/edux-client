@@ -1,0 +1,26 @@
+.profile {
+    background-color: var(--background-color-100);
+    margin: var(--margin-200) 0;
+    border: var(--profile-border-width, var(--border-width-100, 1px)) solid var(--profile-border-color, var(--border-color-200, #DDE0E4));
+    border-radius: var(--border-radius-400);
+    &_user {
+        display: flex;
+        border-radius: var(--border-radius-200);
+        .user_details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: var(--gap-100);
+            width: 100%;
+            .details_name {
+                font-size: var(--font-size-300);
+                line-height: var(--line-height-100);
+            }
+            .details_email {
+                font-size: var(--font-size-200);
+                color: var(--text-color-200);
+                line-height: var(--line-height-100);
+            }
+        }
+    }
+}

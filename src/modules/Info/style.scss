@@ -1,0 +1,36 @@
+.nav {
+    &--info {
+        ul {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            li {
+                width: auto;
+                a {
+                    display: flex;
+                    font-size: 24px;
+                    border: 0;
+                    padding: 8px;
+                    color: var(--nav-link-color-default, var(--text-color-100, #000));
+                    background-color: var(--nav-link-background, transparent);
+                    .icon {
+                        width: 24px;
+                    }
+                    &:hover, 
+                    &:focus {
+                        color: var(--nav-link-color-hover, var(--primary-color-200, #1C6BBA));
+                    }
+                    &.link--active {
+                        border: none;
+                        background: transparent;
+                        color: var(--nav-link-background-active, var(--text-color-200, #000000));
+                    }
+                    &.link--active:hover, 
+                    &.link--active:focus {
+                        color: var(--nav-link-color-hover, var(--primary-color-200, #1C6BBA));
+                    }
+                }
+            }
+        }
+    }
+}

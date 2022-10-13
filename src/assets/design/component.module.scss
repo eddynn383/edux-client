@@ -1,0 +1,289 @@
+// Badge
+.badge {
+    background-color: var(--badge-background, var(--info-color-200, #4287EE));
+    border: var(--badge-border-width, var(--border-width-100)) solid var(--badge-border-color, var(--border-100, #fff));
+    color: var(--badge-color, var(--text-color-600, #fff));
+    position: absolute;
+    left: calc(100% + 4px);
+    bottom: 50%;
+    font-size: 0;
+    line-height: 0;
+    padding: 2px;
+    border-radius: 50%;
+    transform: translateY(50%);
+
+    &[xsize="small"],
+    &[xsize="medium"],
+    &[xsize="large"] {
+        left: 50%;
+        transform: none;
+    }
+    &[xsize="small"] {
+        font-size: 12px;
+        line-height: 14px;
+        border-radius: 10px;
+        padding: 2px 5px;
+    }
+    &[xsize="medium"] {
+        font-size: 16px;
+        line-height: 18px;
+        border-radius: 14px;
+        padding: 4px 5px;
+    }
+    &[xsize="large"] {
+        font-size: 20px;
+        line-height: 22px;
+        border-radius: 18px;
+        padding: 6px 5px;
+    }
+}
+
+// Button
+.button {
+    border-radius: var(--border-radius-color-200);
+    font-family: 'Work Sans', sans-serif;
+    cursor: pointer;
+    //theme
+    &[xtheme="primary"][xvariant="text"] {
+        color: var(--button-text-default, var(--text-color-100, #000000));
+        transition: .3s ease-in-out;
+        &:hover {
+            color: var(--button-text-hover, var(--primary-color-200, #1C6BBA));
+        }
+    }
+    &[xtheme="primary"][xvariant="contained"] {
+        background-color: var(--button-background-default, var(--primary-color-200, #1C6BBA));
+        border: var(--border-width-100) solid var(--button-border-default, var(--primary-color-200, #1C6BBA));
+        color: var(--button-text-default, var(--text-color-600, #fff));
+        transition: .3s ease-in-out;
+        &:hover {
+            background-color: var(--button-background-hover, var(--primary-300, #153E8E));
+            border: var(--border-width-100) solid var(--button-border-hover, var(--primary-300, #153E8E));
+            color: var(--button-text-hover, var(--text-color-600, #fff));
+        }
+    }
+    &[xtheme="secondary"][xvariant="contained"] {
+        background-color: var(--button-background-default, var(--secondary-color-200, #282828));
+        border: var(--border-width-100) solid var(--button-border-default, var(--secondary-color-200, #282828));
+        color: var(--button-text-default, var(--text-color-600, #fff));
+        transition: .3s ease-in-out;
+        &:hover {
+            background-color: var(--button-background-hover, var(--secondary-color-300, #0F0F0F));
+            border: var(--border-width-100) solid var(--button-border-hover, var(--secondary-color-300, #0F0F0F));
+            color: var(--button-text-hover, var(--text-color-600, #fff));
+        }
+    }
+    &[xtheme="primary"][xvariant="outlined"] {
+        background-color: var(--button-background-default, var(--background-color-100, #ffffff));
+        border: var(--border-width-100) solid var(--button-border-default, var(--primary-color-200, #1C6BBA));
+        color: var(--button-text-default, var(--primary-color-200, #1C6BBA));
+        transition: .3s ease-in-out;
+        &:hover {
+            background-color: var(--button-background-hover, var(--primary-color-200, #1C6BBA));
+            border: var(--border-width-100) solid var(--button-border-hover, var(--primary-color-200, #1C6BBA));
+            color: var(--button-text-hover, var(--text-color-600, #ffffff));
+        }
+    }
+    &[xtheme="secondary"][xvariant="outlined"] {
+        background-color: var(--button-background-default, var(--background-color-100, #ffffff));
+        border: var(--border-width-100) solid var(--secondary-color-200);
+        color: var(--button-text-default, var(--secondary-color-200, #282828));
+        transition: .3s ease-in-out;
+        &:hover {
+            background-color: var(--button-background-hover, var(--secondary-color-200, #282828));
+            border: var(--border-width-100) solid var(--secondary-color-200);
+            color: var(--button-text-hover, var(--text-color-600, #0F0F0F));
+        }
+    }
+    &[xtheme="primary"][xvariant="icon"] {
+        background-color: var(--button-background-default, var(--background-color-100, #ffffff));
+        color: var(--button-text-default, var(--text-color-100, #000000));
+        transition: .3s ease-in-out;
+        &:hover {
+            background-color: var(--button-background-hover, var(--primary-color-200, #1C6BBA));
+            color: var(--button-text-hover, var(--text-color-600, #ffffff));
+        }
+    }
+    &[xtheme="secondary"][xvariant="icon"] {
+        background-color: var(--button-background-default, var(--background-color-100, #ffffff));
+        color: var(--button-text-default, var(--text-color-100, #000000));
+        transition: .3s ease-in-out;
+        &:hover {
+            background-color: var(--button-background-hover, var(--secondary-color-200, #282828));
+            color: var(--button-text-hover, var(--text-color-600, #0F0F0F));
+        }
+    }
+
+    // Size
+    &[xsize="small"] {
+        font-size: 14px;
+        line-height: 16px;
+        padding: var(--button-padding-small-y, var(--button-padding-small, var(--padding-100, 5px))) var(--button-padding-small-x, var(--button-padding-small, var(--padding-200, 10px)));
+    }
+    &[xsize="small"][xvariant="icon"] {
+        width: 24px;
+        height: 24px;
+        padding: var(--button-padding-small, var(--padding-100, 5px))
+    }
+    &[xsize="medium"] {
+        font-size: 16px;
+        line-height: 18px;
+        padding: var(--button-padding-medium-y, var(--button-padding-medium, var(--padding-200, 10px))) var(--button-padding-medium-x, var(--button-padding-medium, var(--padding-300, 20px)));
+    }
+    &[xsize="medium"][xvariant="icon"] {
+        width: 40px;
+        height: 40px;
+        padding: var(--button-padding-medium, var(--padding-200, 10px))
+    }
+    &[xsize="large"] {
+        font-size: 18px;
+        line-height: 20px;
+        padding: var(--button-padding-large-y, var(--button-padding-large, var(--padding-200, 10px))) var(--button-padding-large-x, var(--button-padding-large, var(--padding-300, 20px)));
+    }
+    &[xsize="large"][xvariant="icon"] {
+        width: 44px;
+        height: 44px;
+        padding: var(--button-padding-large, var(--padding-200, 10px))
+    }
+
+    &--search {
+        font-size: 16px;
+        position: absolute;
+        top: 50%;
+        right: 6px;
+        padding: 7px 8px;
+        border-radius: 50%;
+        transform: translateY(-50%);
+        transition: .3s ease-in-out;
+        cursor: pointer;
+        &:hover,
+        &:focus {
+            background-color: var(--button-background-default, var(--primary-color-200, #1C6BBA));
+            color: var(--button-text-default, var(--primary-600, #fff));
+        }
+    }
+    &--icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        line-height: 1;
+        transition: .3s ease-in-out;
+        &:hover,
+        &:focus {
+            background-color: var(--button-background-default, var(--primary-color-200, #1C6BBA));
+            color: var(--button-text-default, var(--primary-600, #fff));
+        }
+    }
+    &--icon.button--primary {
+        border: 1px solid #dde0e4;
+    }
+    &--icon.button--small {
+        font-size: 16px;
+        width: 28px;
+        height: 28px;
+    }
+    &--icon.button--medium {
+        font-size: 24px;
+        width: 40px;
+        height: 40px;
+    }
+    &--icon.button--large {
+        font-size: 28px;
+        width: 54px;
+        height: 54px;
+    }
+    &--cover {
+        border-radius: 50%;
+        height: fit-content;
+    }
+    
+}
+
+.button[disabled],
+.button[disabled]:hover {
+    background-color: #a5acb6;
+    cursor: not-allowed;
+}
+
+// Button Group
+.button-group {
+    border-radius: var(--button-toggle-border-radius, var(--border-radius-color-200, 10px));
+    overflow: hidden;
+}
+
+.button-toggle {
+    .button {
+        &[xtheme="primary"][xvariant="icon"] {
+            padding: 12px;
+            border-radius: 0;
+            background-color: var(--button-background-selected, var(--background-color-100, #fff));
+            color: var(--button-text-selected, var(--text-color-100, #000));
+            svg {
+                width: 16px;
+                height: 16px;
+                line-height: 1;
+            }
+        }
+    }
+    &[xselected="card"] .button--card,
+    &[xselected="list"] .button--list {
+        &[xtheme="primary"][xvariant="icon"] {
+            background-color: var(--button-background-selected, var(--primary-color-200, #153E8E));
+            color: var(--button-text-selected, var(--text-color-600, #fff));
+        }
+    }
+}
+
+// Checkbox
+.input--checkbox {
+    background-color: transparent;
+    border-radius: 0;
+    label {
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+        cursor: pointer;
+    }
+    input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+    input[type="checkbox"] + .checkmark,
+    input[type="radiobox"] + .checkmark {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 18px;
+        height: 18px;
+        background-color: #dde0e4;
+        border-radius: 4px;
+        margin-right: 5px;
+        font-size: 12px;
+        .icon {
+            opacity: 0;
+        }
+    }
+    input[type="checkbox"]:checked + .checkmark,
+    input[type="radiobox"]:checked + .checkmark {
+        background-color: #1C6BBA;
+        .icon {
+            opacity: 1;
+            color: #fff;
+        }
+    }
+}
+.input + .input--checkbox,
+.input-group + .input--checkbox {
+    margin-top: 20px;
+}

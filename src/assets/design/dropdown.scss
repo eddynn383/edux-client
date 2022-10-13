@@ -1,0 +1,12 @@
+.dropdown {
+    position: relative;
+    .content {
+        position: absolute;
+        min-width: 250px;
+        top: 60px;
+        right: -10px;
+        z-index: 99;
+        background-color: #fff;
+        border: 1px solid #f2f4f6;
+    }
+}

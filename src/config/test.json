@@ -1,0 +1,51 @@
+{
+    "version": "1.2.1",
+    "groups": [
+        {
+            "name": "Frontend Group",
+            "description": "First group of terminals and commands",
+            "enabled": true,
+            "terminals": [
+                {
+                    "name": "Frontend",
+                    "path": "client",
+                    "cmd": [
+                        "npm start"
+                    ],
+                    "num": 0
+                },
+                {
+                    "name": "Install Package FE",
+                    "path": "client",
+                    "cmd": [
+                        "echo Install your client packages here!"
+                    ],
+                    "num": 0
+                }
+            ]
+        },
+        {
+            "name": "Backend Group",
+            "description": "Second group of terminals and commands",
+            "enabled": true,
+            "terminals": [
+                {
+                    "name": "Backend",
+                    "path": "server",
+                    "cmd": [
+                        "npm run dev"
+                    ],
+                    "num": 0
+                },
+                {
+                    "name": "Install Package BE",
+                    "path": "server",
+                    "cmd": [
+                        "echo Install your server packages here!"
+                    ],
+                    "num": 0
+                }
+            ]
+        }
+    ]
+}

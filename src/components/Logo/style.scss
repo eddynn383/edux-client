@@ -1,0 +1,9 @@
+.logo {
+    &--main {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        padding-top: var(--logo-padding-top, var(--logo-padding, var(--padding-200, 10px)));
+        padding-bottom: var(--logo-padding-bottom, var(--logo-padding, var(--padding-200, 10px)));
+    }
+}

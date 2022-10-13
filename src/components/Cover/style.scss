@@ -1,0 +1,48 @@
+.cover {
+    &[cover-size="small"] {
+        .cover_image {
+            width: 24px;
+            height: 24px;
+        }
+    }
+    &[cover-size="medium"] {
+        .cover_image {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    &[cover-size="large"] {
+        .cover_image {
+            width: 48px;
+            height: 48px;
+        }
+    }
+    &[cover-size="extra-large"] {
+        .cover_image {
+            width: 150px;
+            height: 150px;
+        }
+    }
+    &[variant="circle"] {
+        .cover_image {
+            border-radius: 50%;
+            overflow: hidden;
+        }
+    }
+    &[variant="square"] {
+        .cover_image { 
+            border-radius: 4px;
+            overflow: hidden;
+        }
+    }
+    img {
+        object-fit: cover;
+        height: 100%;
+    }
+    &--progress {
+        padding-top: var(--cover-padding-top, var(--cover-padding, var(--padding-200)));
+        padding-bottom: var(--cover-padding-bottom, var(--cover-padding, var(--padding-200)));
+        padding-left: var(--cover-padding-left, var(--cover-padding, var(--padding-200)));
+        padding-right: var(--cover-padding-right, var(--cover-padding, var(--padding-200)));
+    }
+}

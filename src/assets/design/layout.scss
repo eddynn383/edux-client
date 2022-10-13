@@ -1,0 +1,27 @@
+@import "_variables";
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    font-size: var(--font-size-300);
+    font-weight: 400;
+    color: var(--body-text-color, var(--text-color-100, #000));
+    margin: 0;
+}
+
+.layout {
+    display: grid;
+    grid-auto-flow: column;
+    height: 100vh;
+
+    &--one-column {
+        grid-template-columns: minmax(345px, auto);
+    }
+    &--two-column {
+        grid-template-columns: minmax(200px, 300px) auto;
+    }  
+}
+
+.module--tools {
+    display: flex;
+    gap: 20px;
+}

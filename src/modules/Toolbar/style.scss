@@ -1,0 +1,10 @@
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: var(--border-width-100) solid var(--border-color-100);
+    &_left,
+    &_right {
+        display: flex;
+        gap: var(--gap-200);
+    }
+}

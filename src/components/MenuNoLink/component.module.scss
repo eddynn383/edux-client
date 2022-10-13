@@ -1,0 +1,31 @@
+.no-link {
+    display: flex;
+    // align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: var(--nav-link-gap, var(--gap-200, 10px));
+    padding-top: var(--nav-link-padding-top, var(--nav-link-padding, var(--padding-200, 10px)));
+    padding-bottom: var(--nav-link-padding-bottom, var(--nav-link-padding, var(--padding-200, 10px)));
+    padding-left: var(--nav-link-padding-left, var(--nav-link-padding, var(--padding-200, 10px)));
+    padding-right: var(--nav-link-padding-right, var(--nav-link-padding, var(--padding-200, 10px)));
+    font-size: var(--nav-link-font-size, var(--font-size-300, 16px));
+    line-height: 20px;
+    color: var(--nav-link-color-default, var(--text-color-100, #000));
+    background-color: var(--nav-link-background, var(--background-color-100, #fff));
+    border-radius: var(--nav-link-border-radius, var(--border-radius-200, 10px));
+    transition: all 0.3s ease-in-out;
+
+    .component_text__gIO+j {
+        width: 100%;
+    }
+}
+
+a {
+    color: #1C6BBA;
+    text-decoration: none;
+    transition: color .3s ease-in-out;
+    &:hover {
+        color: #0e4379;
+        text-decoration: none;
+    }
+}

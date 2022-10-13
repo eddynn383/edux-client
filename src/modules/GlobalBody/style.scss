@@ -1,0 +1,31 @@
+.body {
+    &_inner {
+        max-width: 1440px;
+        margin: 0 auto;
+        height: 100%;
+    }
+    height: 100%;
+    &_top {
+        padding-top: var(--padding-300);
+        padding-left: var(--padding-300);
+        padding-right: var(--padding-300);
+    }
+    &_content {
+        display: flex;
+        gap: 20px;
+        padding-top: var(--padding-300);
+        padding-bottom: var(--padding-300);
+        padding-left: var(--padding-300);
+        padding-right: var(--padding-300);
+        height: calc(100% - 81px);
+    }
+    &_left {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-300);
+        width: calc(100% - 260px);
+    }
+    &_right {
+        width: 260px;
+    }
+}

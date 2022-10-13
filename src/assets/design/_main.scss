@@ -1,0 +1,35 @@
+.layout {
+    &--main {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: 300px auto;
+        height: 100vh;
+        overflow: hidden;
+        @media only screen and (min-width: 1741px) {
+            grid-template-columns: 400px auto;
+        }
+        .layout_left {
+            display: grid;
+            grid-template-rows: 80px auto;
+            position: relative;
+            background-color: var(--layout-right-background, var(--background-color-100, #ffffff));
+            & > .panel {
+                padding-left: var(--padding-300);
+                padding-right: var(--padding-300);
+            }
+            .panel--bottom {
+                display: flex;
+                flex-direction: column;
+                gap: var(--gap-300);
+            }
+        }
+        .layout_right {
+            background-color: var(--layout-left-background, var(--background-color-200, #F0F2F4));
+            .panel--top {
+                position: relative;
+                margin: 0 auto;
+                height: 100vh;
+            }
+        }
+    }
+}

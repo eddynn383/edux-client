@@ -1,0 +1,41 @@
+.calendar {
+    &--schedule {
+        .react-calendar {
+            width: auto;
+            border: none;
+            background-color: #F0F2F4;
+            border-radius: 5px;
+            padding: 5px;
+            &__tile {
+                &--now {
+                    background: #BF4640;
+                    color: #fff;
+                    &:enabled:hover,
+                    &:enabled:focus {
+                        background: #BF4640;
+                        color: #fff;
+                    }
+                }
+                &--active {
+                    background: #F7D5D4;
+                    color: #BF4640;
+                    &:enabled:hover,
+                    &:enabled:focus {
+                        background: #F7D5D4;
+                        color: #BF4640;
+                    }
+                }
+            }
+
+            &__month-view__weekdays {
+                abbr {
+                    text-decoration: none;
+                }
+            }
+            button {
+                border-radius: 5px;
+            }
+        }
+        
+    }
+}

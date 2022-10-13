@@ -1,0 +1,74 @@
+.layout--auth {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    .layout_left {
+        .panel--top {
+            .wallpaper {
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100vh;
+                }
+            }
+        }
+    }
+    .layout_right {
+        padding: 0 60px;
+        .panel--top {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        .title {
+            padding-bottom: 20px;
+        }
+        .form {
+            .signin_title,
+            .signup_title {
+                margin-bottom: 20px;
+            }
+            .signup_form,
+            .signin_form {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        .form_item--remember {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin: auto 0;
+        }
+        .social {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            gap: 20px;
+            & > span {
+                color: #a5acb6;
+            }
+            .social_buttons {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+            }
+        }
+        .register {
+            & > span {
+                color: #a5acb6;
+            }
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+}

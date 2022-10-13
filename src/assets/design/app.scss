@@ -1,0 +1,61 @@
+@import './variables';
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--body-text-color, var(--text-color-100, #000));
+    margin: 0;
+}
+
+h1 {
+    font-size: var(--font-size-600);
+    font-weight: var(--font-weight-700);
+}
+
+h2 {
+    font-size: var(--font-size-500);
+    font-weight: var(--font-weight-700);
+}
+
+h3 {
+    font-size: var(--font-size-400);
+    font-weight: var(--font-weight-500);
+}
+
+h4 {
+    font-size: var(--font-size-300);
+    font-weight: var(--font-weight-700);
+}
+
+h5 {
+    font-size: var(--font-size-200);
+    font-weight: var(--font-weight-500);
+}
+
+// @media only screen and (max-width: 1440px) {
+//     .layout {
+//         &:not(.layout--accessibility) {
+//             grid-template-columns: 300px auto;
+//         }
+//         &--auth:not(.layout--accessibility) {
+//             grid-template-columns: 4fr 2fr;
+//         }
+//     }
+// }
+
+// @media only screen and (max-width: 1024px) {
+//     .layout {
+//         &:not(.layout--accessibility) {
+//             display: block;
+//         }
+//         &--auth:not(.layout--accessibility) {
+//             grid-template-columns: 4fr 2fr;
+//         }
+//         &_left {
+//             position: absolute;
+//             top: 0;
+//             right: 100%;
+//         }
+//     }
+// }

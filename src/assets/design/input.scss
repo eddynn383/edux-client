@@ -1,0 +1,49 @@
+.input {
+    &:not(.input--color) {
+        border-radius: 5px;
+        background-color: #fff;
+        overflow: hidden;
+    }
+    input {
+        font-family: "Work Sans", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        padding: 10px 20px;
+        &:focus,
+        &:focus-visible {
+            outline: none;
+        }
+    }
+    &--search {
+        width: 300px;
+        border: 1px solid #dde0e4;
+        input {
+            padding: 10px 40px 10px 20px;
+        }
+    }
+    &--color {
+        input {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            padding: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            background-color: transparent;
+            overflow: hidden;
+            &::-webkit-color-swatch-wrapper {
+                padding: 5px;
+            }
+            &::-webkit-color-swatch {
+                border: none;
+                border-radius: 3px;
+            }
+        }
+    }
+}
+
+.input-group + .input-group {
+    margin-top: 20px;
+}

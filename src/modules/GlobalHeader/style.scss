@@ -1,0 +1,14 @@
+.header {
+    border-bottom: var(--border-width-100) solid var(--border-color-200);
+    &_inner {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding-top: var(--header-padding-top, var(--header-padding, var(--padding-300, 20px)));
+        padding-bottom: var(--header-padding-bottom, var(--header-padding, var(--padding-300, 20px)));
+        padding-left: var(--header-padding-left, var(--header-padding, var(--padding-300, 20px)));
+        padding-right: var(--header-padding-right, var(--header-padding, var(--padding-300, 20px)));
+    }
+}

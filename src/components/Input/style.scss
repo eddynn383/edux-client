@@ -1,0 +1,222 @@
+.input {
+    --focus: #5171C5;
+    --success: #5fbc65;
+    --fail: #d92626;
+    &_label.hide {
+        display: none;
+        width: 0;
+        height: 0;
+        margin: 0;
+        font-size: 0;
+        line-height: 0;
+    }
+    &_inner {
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        gap: var(--gap-200, 10px);
+        border: var(--input-border-width-default, var(--border-width-100, 1px)) solid var(--input-border-color-default, var(--border-color-200, #DDE0E4));
+        background: var(--input-background-default, var(--background-color-100, #ffffff));
+        border-radius: var(--border-radius-100, 5px);
+        .icon {
+            align-items: center;
+            justify-content: center;
+        }
+        .icon--showOnHover {
+            opacity: 0;
+            transition: opacity .3s ease;
+        }
+        &:hover .icon--showOnHover {
+            opacity: 1;
+        }
+        
+    }
+    &_primitive {
+        width: 100%;
+        border: none;
+        padding: 0;
+        margin: 0;
+        background: transparent;
+        appearance: none;
+        font-size: var(--font-size-300, 16px);
+        line-height: 20px;
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover, 
+        &:-webkit-autofill:focus, 
+        &:-webkit-autofill:active {
+            font-size: var(--font-size-300, 16px);
+            box-shadow: 0 0 0 30px var(--background-color-100) inset !important;
+            -webkit-box-shadow: 0 0 0 30px var(--background-color-100) inset !important;
+        }
+        &:focus,
+        &:focus-visible {
+            outline: none;
+        }
+    }
+    &--color {
+        input {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            padding: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            background-color: transparent;
+            overflow: hidden;
+            &::-webkit-color-swatch-wrapper {
+                padding: 5px;
+            }
+            &::-webkit-color-swatch {
+                border: none;
+                border-radius: 3px;
+            }
+        }
+    }
+}
+
+.input[input-size="small"] .input_inner {
+    padding: var(--input-padding, var(--padding-200, 10px));
+}
+
+.input[input-size="medium"] .input_inner {
+    padding: 14px;
+}
+
+.input[input-size="large"] .input_inner {
+    padding: 16px;
+}
+
+.input--iconBefore.input--iconAfter {
+    .input_inner {
+        grid-template-columns: 16px auto 16px;
+    }
+}
+
+.input--iconBefore {
+    .input_inner {
+        grid-template-columns: 16px auto;
+    }
+}
+
+.input--iconAfter {
+    .input_inner {
+        grid-template-columns: auto 16px;
+    }
+}
+
+.input:not(.input--checkbox) {
+    position: relative;
+}
+
+.input[data-focus="true"]:before,
+.input:focus:before,
+.input[data-focus="false"][data-status="fail"]:before,
+.input[data-focus="false"][data-status="success"]:before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    // background: var(--focus);
+    animation-name: animate-in; 
+    background-image: linear-gradient(to right, var(--focus), var(--focus)), 
+    linear-gradient(to bottom, var(--focus), var(--focus)), 
+    linear-gradient(to right, var(--focus), var(--focus)),
+    linear-gradient(to bottom, var(--focus), var(--focus)); 
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%; 
+    // background-size: 100% 2px, 2px 100%, 100% 2px, 2px 100%;
+    background-repeat: no-repeat;   
+    border-radius: 8px;
+    animation-duration: 0.5s;
+    z-index: -1;
+}
+
+.input[data-focus="false"][data-status="success"]:before {
+    background-image: linear-gradient(to right, var(--success), var(--success)), 
+    linear-gradient(to bottom, var(--success), var(--success)), 
+    linear-gradient(to right, var(--success), var(--success)),
+    linear-gradient(to bottom, var(--success), var(--success)); 
+}
+
+.input[data-focus="false"][data-status="fail"]:before {
+    background-image: linear-gradient(to right, var(--fail), var(--fail)), 
+    linear-gradient(to bottom, var(--fail), var(--fail)), 
+    linear-gradient(to right, var(--fail), var(--fail)),
+    linear-gradient(to bottom, var(--fail), var(--fail)); 
+}
+
+// .input[data-status]:before {
+//     animation-name: statusBounce;
+// }
+
+// .input[data-status="success"]:before,
+// .input[data-status="fail"]:before {
+//     inset: -2px;
+// }
+
+// .input[data-status="success"]:after {
+//     animation-name: statusBounceOverlay;
+//     inset: 0;
+// }
+
+// .input[data-status="fail"]:after {
+//     animation-name: statusBounceOverlay;
+//     inset: 0;
+// }
+
+// .input[data-status="success"]:before,
+// .input[data-status="success"]:after {
+//     background: #5fbc65;
+// }
+
+// .input[data-status="fail"]:before,
+// .input[data-status="fail"]:after {
+//     background: #d92626;
+// }   
+
+.input-group + .input-group {
+    margin-top: 20px;
+}
+
+@keyframes animate-in {
+    0% {
+      background-size: 0 2px, 0 0, 0 0, 0 0; 
+    }
+  
+    25% {
+      background-size: 100% 2px, 0 0, 0 0, 0 0; 
+    }
+  
+    50% {
+      background-size: 100% 2px, 2px 100%, 0 0, 0 0; 
+    }
+  
+    75% {
+      background-size: 100% 2px, 2px 100%, 100% 2px, 0 0; 
+    }
+  
+    100% {
+      background-size: 100% 2px, 2px 100%, 100% 2px, 2px 100%; 
+    }
+}
+
+@keyframes statusBounceOverlay {
+    0% {
+        inset: 0;
+        opacity: 0.5;
+    }
+    100% {
+        inset: -10px;
+        opacity: 0;
+    }
+}
+
+@keyframes statusBounce {
+    0% {
+        inset: 0;
+        opacity: 0;
+    }
+    100% {
+        inset: -2px;
+        opacity: 1;
+    }
+}
