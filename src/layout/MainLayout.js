@@ -6,6 +6,7 @@ import Menu from '../components/Menu'
 import Panel from '../components/Panel'
 import Logo from '../components/Logo'
 import Search from '../components/Search'
+import Text from '../components/Text'
 
 import logoPath from '../assets/logo/logo-light.svg';
 
@@ -15,7 +16,7 @@ const MainLayout = () => {
 
     const attrs = {
         logo: {
-            cn: ['main'],
+            cn: ['logo--main'],
             url: logoPath,
             alt: 'Placeholder Logo',
             style: {
@@ -38,8 +39,8 @@ const MainLayout = () => {
                         <Logo {...attrs.logo} />
                     </Panel>
                     <Panel cn="panel panel--bottom">
-                        <Search />
-                        <Menu {...attrs.menu} />
+                        <Search cn="search--page" size="medium" />
+                        <Menu {...attrs.menu} /> 
                         <Profile {...attrs.profile} />
                     </Panel>
                 </Panel>

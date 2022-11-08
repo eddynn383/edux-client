@@ -1,10 +1,12 @@
-import { useState, useRef, useEffect } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useState, useRef, useEffect } from 'react'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 
-import Form from '../../modules/Form';
-import Input from '../../components/Input';
-import Button from '../../components/Button';
-import Icon from '../../components/Icon';
+import Form from '../../components/Form'
+import FormInput from '../../components/FormInput'
+import Label from '../../components/Label'
+import Input from '../../components/Input'
+import Button from '../../components/Button'
+import Icon from '../../components/Icon'
 
 // import axios from '../../api/axios';
 
@@ -47,10 +49,7 @@ const Register = () => {
     const props = {
         email: {
             cn: ['email'],
-            id: 'email',
             name: 'email',
-            label: 'Email',
-            hideLabel: true,
             iconBefore: <Icon value="faEnvelope" cn={['before', 'default']}/>,
             placeholder: 'Email',
             innerRef: emailRef,
@@ -66,10 +65,7 @@ const Register = () => {
         },
         password: {
             cn: ['password'],
-            id: 'password',
             name: 'password',
-            label: 'Password',
-            hideLabel: true,
             type: showPass ? 'text' : 'password',
             iconBefore: <Icon value="faLock" cn={['before', 'default']}/>,
             iconAfter: <Icon value={showPass ? 'faEye' : 'faEyeSlash'} cn={['after', 'change-type']} onClick={showPassword}/>,
@@ -87,10 +83,7 @@ const Register = () => {
         },
         repassword: {
             cn: ['repassword', showPass],
-            id: 'repassword',
             name: 'repassword',
-            label: 'Password Confirmation',
-            hideLabel: true,
             type: showPassConf ? 'text' : 'password',
             iconBefore: <Icon value="faLock" cn={['before', 'default']}/>,
             iconAfter: <Icon value={showPassConf ? 'faEye' : 'faEyeSlash'} cn={['after', 'change-type']} onClick={showPasswordConfirm}/>,
@@ -111,7 +104,6 @@ const Register = () => {
             checkmark: <Icon cn={['faCheck']} value='faCheck'/>
         },
         button: {
-            cn: ['submit', 'text', 'reset'],
             type: 'submit',
             size: 'large',
             text: 'Submit',
@@ -203,18 +195,21 @@ const Register = () => {
             <div className="module signup">
                 <h1 className="signup_title">Create your <br/> account</h1>
                 <Form cn={['signup_form']} onSubmit={handleSubmit}>
-                    <div className="form_item form_item--email">
-                        <Input {...props.email} type="email"/>
-                    </div>
-                    <div className="form_item form_item--pass">
-                        <Input {...props.password}/>
-                    </div>
-                    <div className="form_item form_item--repass">
-                        <Input {...props.repassword}/>
-                    </div>
-                    <div className="form_item form_item--five">
+                    <FormInput cn="form_item--email"> 
+                        <Label htmlFor="email" hide={true}>Email</Label>
+                        <Input id="email" type="email" size="large" {...props.email} />
+                    </FormInput>
+                    <FormInput cn="form_item--pass"> 
+                        <Label htmlFor="password" hide={true}>Password</Label>
+                        <Input id="password" type="password" size="large" {...props.password} />
+                    </FormInput>
+                    <FormInput cn="form_item--repass"> 
+                        <Label htmlFor="repassword" hide={true}>Password Confirmation</Label>
+                        <Input id="repassword" type="password" size="large" {...props.repassword} />
+                    </FormInput>
+                    <FormInput cn="form_item--signup"> 
                         <Button {...props.button} style={{width: "100%"}}>Register</Button>
-                    </div>
+                    </FormInput>
                 </Form>
             </div>
             {/* <div className="module social">

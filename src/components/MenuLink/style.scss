@@ -1,9 +1,3 @@
-a {
-    color: #1C6BBA;
+.link {
     text-decoration: none;
-    transition: color .3s ease-in-out;
-    &:hover {
-        color: #0e4379;
-        text-decoration: none;
-    }
 }

@@ -1,0 +1,32 @@
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    .select-container {
+        background-color: var(--background-color-200);
+    }
+    &_right {
+        display: flex;
+        gap: var(--gap-200);
+        .pages {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: var(--gap-200);
+            li {
+                .button {
+                    background-color: transparent;
+                    border-color: transparent;
+                    color: var(--text-color-200);
+                }
+                &.selected {
+                    .button {
+                        background-color: var(--primary-color-200);
+                        border-color: var(--primary-color-200);
+                        color: var(--text-color-600);
+                    }
+                }
+            }
+        }
+    }
+}

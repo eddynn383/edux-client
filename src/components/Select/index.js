@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import Icon from '../Icon'
 
-import style from './select.module.scss'
+import './style.scss'
 import Search from '../Search'
 
 const Select = ({ placeholder, options, isMulti, isSearchable, onChange }) => {
@@ -39,13 +39,13 @@ const Select = ({ placeholder, options, isMulti, isSearchable, onChange }) => {
 
         if (isMulti) {
             return (
-                <div className={style.tags}>
+                <div className={'select-current_tags'}>
                     {selectedValue.map((option) => (
-                        <div key={option.value} className={style.tag}>
-                            <span className={style["tag_text"]}>
+                        <div key={option.value} className={'select-current_tag'}>
+                            <span className={"select-current_tag-text"}>
                                 {option.label}
                             </span>
-                            <span onClick={(e) => onTagRemove(e, option)} className={style["tag_icon"]}>
+                            <span onClick={(e) => onTagRemove(e, option)} className={"select-current_tag-icon"}>
                                 <Icon cn={['close']} value="faXmark" />
                             </span>
                         </div>
@@ -106,27 +106,29 @@ const Select = ({ placeholder, options, isMulti, isSearchable, onChange }) => {
         return options.filter((option) => option.label.toLowerCase().indexOf(searchValue.toLowerCase()) >= 0)
     }
 
-    const cls = isOpen ? style.container + " " + style.open : style.container
+    const cls = isOpen ? 'select-container open' : 'select-container'
 
     return (
         <div className={cls}>
-            <div className={style.current} onClick={handleInputClick} >
-                <div className={style["current_value"]}>{getDisplay()}</div>
-                <div className={style["current_icon"]}>
+            <div className={'select-current'} onClick={handleInputClick} >
+                <div className={isMulti ? "select-current_value select-current_value--multi" : "select-current_value"}>{getDisplay()}</div>
+                <div className={"select-current_icon"}>
                     <Icon cn={['arrow']} value={isOpen ? "faChevronUp" : "faChevronDown"}/>
                 </div>
             </div>
             {isOpen && (
-                <div className={style.dropdown}>
+                <div className={'select-dropdown'}>
                     {isSearchable && (
                         <Search value={searchValue} innerRef={searchRef} onChange={onSearch} />
                     )}
-                    <div className={style["dropdown_options"]}>
-                        {getOptions().map((option) => (
-                            <div onClick={() => onItemClick(option)} key={option.value} className={style["dropdown_option"]} >
+                    <div className={"select-dropdown_options"}>
+                        {
+                        getOptions().map((option) => (
+                            <div onClick={() => onItemClick(option)} key={option.value} className={'select-dropdown_option'} >
                                 {option.label}
                             </div>
-                        ))}
+                        ))
+                        }
                     </div>
                 </div>
             )}

@@ -1,7 +1,6 @@
-import { addClass, classModifier } from '../../functions/utils';
 import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import './style.scss';
+import './style.scss'
 
 const Cover = ({ url, alt, cn, type="circle", size="medium", progress=false, progressData, progressStyle, style }) => {
 
@@ -42,8 +41,7 @@ const Cover = ({ url, alt, cn, type="circle", size="medium", progress=false, pro
     }
 
     return (
-        <div className={addClass(classModifier('cover', [...cn]))} variant={type} cover-size={size} style={style}>
-
+        <div className={cn ? `${'component cover'} ${cn}` : `${'component cover'}`} xvariant={type} xsize={size} style={style}>
             {
                 !progress && 
                 <div className="cover_image">
@@ -52,7 +50,7 @@ const Cover = ({ url, alt, cn, type="circle", size="medium", progress=false, pro
             }
             {
                 progress && 
-                <CircularProgressbarWithChildren className="test" value={percentage} text={`${percentage}%`} styles={progressCustomStyle}>
+                <CircularProgressbarWithChildren className={'cover-progress'} value={percentage} text={`${percentage}%`} styles={progressCustomStyle}>
                     <div className="cover_image">
                         <img src={url} alt={alt} />
                     </div>

@@ -1,5 +1,5 @@
-import { useState, useRef, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useState, useRef, useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
 import { setCredentials } from '../../services/Auth/authSlice'
@@ -8,11 +8,13 @@ import { useLoginMutation } from '../../services/Auth/authApiSlice'
 import usePersist from '../../hooks/usePersist'
 
 
-import Input from '../../components/Input';
-import Checkbox from '../../components/Checkbox';
-import Button from '../../components/Button';
-import Icon from '../../components/Icon';
-import Form from '../../modules/Form';
+import Form from '../../components/Form'
+import FormInput from '../../components/FormInput'
+import Label from '../../components/Label'
+import Input from '../../components/Input'
+import Checkbox from '../../components/Checkbox'
+import Button from '../../components/Button'
+import Icon from '../../components/Icon'
  
 // import useAuth from '../../hooks/useAuth';
 // import useNav from '../../hooks/useNavigation';
@@ -58,12 +60,9 @@ const Login = (o) => {
 
     const props = {
         email: {
-            cn: ['email'],
-            id: 'email',
+            cn: 'input--email',
             name: 'email',
-            label: 'Email',
-            hideLabel: true,
-            iconBefore: <Icon value="faEnvelope" cn={['before', 'default']}/>,
+            iconBefore: <Icon value="faEnvelope" cn={['icon--before icon--default']}/>,
             placeholder: 'Email',
             focus: emailFocus,
             innerRef: emailRef,
@@ -73,14 +72,11 @@ const Login = (o) => {
             onBlur: () => setEmailFocus(false)
         },
         password: {
-            cn: ['password'],
-            id: 'password',
+            cn: 'input--password',
             name: 'password',
-            label: 'Password',
-            hideLabel: true,
             type: showPass ? 'text' : 'password',
-            iconBefore: <Icon value="faLock" cn={['before', 'default']}/>,
-            iconAfter: <Icon value={showPass ? 'faEye' : 'faEyeSlash'} cn={['after', 'change-type']} onClick={showPassword}/>,
+            iconBefore: <Icon value="faLock" cn={['icon--before icon--default']}/>,
+            iconAfter: <Icon value={showPass ? 'faEye' : 'faEyeSlash'} cn={['icon--after icon--change-type']} onClick={showPassword}/>,
             placeholder: 'Password',
             focus: passwordFocus,
             innerRef: passwordRef,
@@ -96,7 +92,6 @@ const Login = (o) => {
             onClick: () => setPersist(prev => !prev)
         },
         button: {
-            cn: ['submit', 'text', 'reset'],
             type: 'submit',
             size: 'large',
             text: 'Submit',
@@ -156,19 +151,21 @@ const Login = (o) => {
                 <div className="module signin">
                     <h1 className="signin_title">Welcome back <br/>to <span style={{color: "#1C6BBA"}}>EDEN</span></h1>
                     <Form cn={['signin_form']} onSubmit={handleSubmit}>
-                        <div className="form_item form_item--email">
-                            <Input {...props.email} type="email"/>
-                        </div>
-                        <div className="form_item form_item--pass">
-                            <Input {...props.password}/>
-                        </div>
-                        <div className="form_item form_item--remember">
+                        <FormInput cn="form_item--email"> 
+                            <Label htmlFor="email" hide={true}>Email</Label>
+                            <Input id="email" type="email" size="large" {...props.email} />
+                        </FormInput>
+                        <FormInput cn="form_item--password"> 
+                            <Label htmlFor="password" hide={true}>Password</Label>
+                            <Input id="password" type="password" size="large" {...props.password} />
+                        </FormInput>
+                        <FormInput cn="form_item--remember"> 
                             <Checkbox {...props.checkbox} type="checkbox"/>
                             <Link to="/forgot-password">Forgot Password?</Link>
-                        </div>
-                        <div className="form_item form_item--signin">
+                        </FormInput>
+                        <FormInput cn="form_item--signin"> 
                             <Button {...props.button} style={{width: "100%"}}>Sign In</Button>
-                        </div>
+                        </FormInput>
                     </Form>
                 </div>
                 {/* <div className="module social">

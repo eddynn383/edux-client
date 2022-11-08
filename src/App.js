@@ -12,12 +12,17 @@ import Login from './pages/Auth/Login'
 import Register from './pages/Auth/Register'
 import ForgotPassword from './pages/Auth/ForgotPassword'
 
+import Users from './pages/Admin/Users/UsersList'
+import EditUser from './pages/Admin/Users/Edit/EditUser'
+import NewUser from './pages/Admin/Users/New/NewUser'
+import Courses from './pages/Admin/Courses/CoursesList'
+import EditCourse from './pages/Admin/Courses/Edit/EditCourse'
+import NewCourse from './pages/Admin/Courses/New/NewCourse'
+
 import Dashboard from './pages/Dashboard'
 import Catalog from './pages/Catalog'
-import Users from './pages/Users'
 import Settings from './pages/Settings'
 import Profile from './pages/Profile'
-import Courses from './pages/Courses'
 import Notifications from './pages/Notifications'
 import Messages from './pages/Messages'
 
@@ -36,14 +41,14 @@ import './assets/design/app.scss'
 // Config
 import { ROLES } from './config/roles'
 
-import useNav from './hooks/useNavigation'
+// import useNav from './hooks/useNavigation'
 
 function App() {
-    const { title } =  useNav()
+    // const { title } =  useNav()
 
-    useEffect(() => {
-        console.log(title)
-    }, [title])
+    // useEffect(() => {
+    //     console.log(title)
+    // }, [title])
 
     return (
         <>
@@ -65,10 +70,18 @@ function App() {
                                 <Route path="profile" element={<Profile />} />
                                 <Route path="notifications" element={<Notifications />} />
                                 <Route path="messages" element={<Messages />} />
-                                <Route path="users" element={<Users />} />
-                                <Route element={<RequireAuth allowedRoles={[ROLES.User, ROLES.Admin]}/>}>
-                                    <Route path="management/users" element={<Users />} />
-                                    <Route path="management/courses" element={<Courses />} />
+                                {/* <Route path="users" element={<Users />} /> */}
+                                <Route element={<RequireAuth allowedRoles={[ROLES.Admin]}/>}>
+                                    <Route path="management/users" >
+                                        <Route index element={<Users />} />
+                                        <Route path=":id" element={<EditUser />} />
+                                        <Route path="new" element={<NewUser />} />
+                                    </Route>
+                                    <Route path="management/courses" >
+                                        <Route index element={<Courses />} />
+                                        <Route path=":id" element={<EditCourse />} />
+                                        <Route path="new" element={<NewCourse />} />
+                                    </Route>
                                 </Route>                 
                             </Route>             
                         </Route>   

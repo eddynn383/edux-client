@@ -1,4 +1,5 @@
 import Icon from '../Icon'
+import './style.scss'
 
 const RatingStar = ({value, idx}) => {
     const integerValue = parseInt(value)
@@ -15,13 +16,17 @@ const RatingStar = ({value, idx}) => {
     const progress = idx > value ? value > integerValue ? getDecimalPart(value) : 0 : 100
 
     return (
-        <span className="rating_star" data-progress={progress}>
-            <label htmlFor="inputStar">{idx + 1}</label>
-            <input id="inputStar" type="radio" defaultChecked={idx <= value ? true : false}/>
-            {/* <span className="rating_star-icon"> */}
-                <Icon cn={['star base']} value="faStar" />
-                {/* <Icon cn={['star fullfill']} value="faStar" style={{width: `${progress}%`}}/> */}
-            {/* </span> */}
+        <span className="component rating-star" data-progress={progress}>
+            <label htmlFor="star">{idx + 1}</label>
+            <input id="star" type="radio" defaultChecked={idx <= value ? true : false}/>
+            <span className="rating-star_icon">
+                <span className="rating-star_icon-fill" style={{width: `${progress}%`}}>
+                    <Icon cn={['star fullfill']} value="faStar" />
+                </span>
+                <span className="rating-star_icon-base">
+                    <Icon cn={['star base']} value="faStar" />
+                </span>
+            </span>
         </span>
     )
 }

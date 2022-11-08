@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import useNav from '../hooks/useNavigation'
-import Form from '../modules/Form'
+import Form from '../components/Form'
 import Button from '../components/Button'
 
 const Settings = () => {

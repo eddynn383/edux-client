@@ -1,8 +1,8 @@
-import sx from './component.module.scss'
+import './style.scss'
 
-const Label = ({cn, htmlFor, children}) => {
+const Label = ({ cn, htmlFor, hide, children }) => {
     return (
-        <label className={cn ? `${sx.label} ${cn}` : `${sx.label}`} htmlFor={htmlFor}>{children}</label>
+        <label className={cn ? `${'component label'} ${cn}` : `${'component label'}`} hidden={hide} htmlFor={htmlFor}>{children}</label>
     )
 }
 

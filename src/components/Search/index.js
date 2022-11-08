@@ -1,20 +1,16 @@
-import { useState, useRef } from "react"
-import Input from "../Input"
-import Icon from "../Icon"
+import Label from '../Label'
+import Input from '../Input'
+import Icon from '../Icon'
 
 import './style.scss'
 
-const Search = ({value, style, variant, innerRef, onChange}) => {
+const Search = ({cn, id, value, size="medium", variant="outline", style, innerRef, onChange}) => {
     const props = {
-        search: {
-            cn: ['search'],
-            id: 'search',
+        input: {
             name: 'search',
-            label: 'Search',
-            size: 'small',
             variant,
             hideLabel: true,
-            iconAfter: <Icon value={'faMagnifyingGlass'} cn={['after', 'clear']} />,
+            iconAfter: <Icon value={'faMagnifyingGlass'} cn={['icon--after icon--clear']} />,
             placeholder: 'Search...',
             required: true,
             innerRef,
@@ -25,7 +21,10 @@ const Search = ({value, style, variant, innerRef, onChange}) => {
     }
 
     return (
-        <Input {...props.search} type="text"/>
+        <div className={cn ? `${'component search'} ${cn}` : `${'component serach'}`} id={id} variant={variant} xsize={size} >
+            <Label cn="label--search" htmlFor={'search'} hide={true}>Search</Label>
+            <Input cn="input--search" id={'search'} type="text" size={size} {...props.input}/>
+        </div>
     ) 
 }
 

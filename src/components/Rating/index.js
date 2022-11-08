@@ -3,8 +3,8 @@ import './style.scss'
 
 const Rating = ({score, reviews}) => {
     return (
-        <div className="rating">
-            <span className="rating_inner">
+        <div className={'rating'}>
+            <span className={'rating-container'}>
                 {
                     [...Array(5)].map((item, idx) => {
                         const i = idx + 1
@@ -14,8 +14,8 @@ const Rating = ({score, reviews}) => {
                     })
                 }
             </span>
-            <span className="rating_score">{score}</span>
-            <span className="rating_reviews">({reviews})</span>
+            <span className={'rating-score'}>{score}</span>
+            <span className={'rating-reviews'}>({reviews})</span>
         </div>
     )
 }

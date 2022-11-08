@@ -1,0 +1,31 @@
+.rating-star {
+    position: relative;
+    label,
+    input {
+        position: absolute;
+        width: 0;
+        height: 0;
+        margin: 0;
+        padding: 0;
+        visibility: hidden;
+    }
+    .icon--star {
+        font-size: 14px;
+    }
+    &_icon {
+        position: relative;
+        &-base {
+            color: var(--rating-star-default-color, var(--text-color-400, #A5ACB6));
+        }
+        &-fill {
+            color: var(--rating-star-fill-color, var(--warning-color-200, #EB981C));
+            position: absolute;
+            top: 0;
+            overflow: hidden;
+            z-index: 1;
+            .icon {
+                justify-content: flex-start;
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+.no-link {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: var(--nav-link-gap, var(--gap-200, 10px));
+    padding-top: var(--nav-link-padding-top, var(--nav-link-padding, var(--padding-200, 10px)));
+    padding-bottom: var(--nav-link-padding-bottom, var(--nav-link-padding, var(--padding-200, 10px)));
+    padding-left: var(--nav-link-padding-left, var(--nav-link-padding, var(--padding-200, 10px)));
+    padding-right: var(--nav-link-padding-right, var(--nav-link-padding, var(--padding-200, 10px)));
+    font-size: var(--nav-link-font-size, var(--font-size-300, 16px));
+    line-height: 20px;
+    color: var(--nav-link-color-default, var(--text-color-100, #000));
+    background-color: var(--nav-link-background, var(--background-color-100, #fff));
+    border-radius: var(--nav-link-border-radius, var(--border-radius-200, 10px));
+    transition: all 0.3s ease-in-out;
+}

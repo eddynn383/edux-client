@@ -6,10 +6,7 @@ import Search from '../../components/Search'
 import Select from '../../components/Select/index.js'
 
 import { orderDirection as orderDirectionData, orderType as orderTypeData } from '../../config/select'
-
-import btn from '../../components/Button/component.module.scss'
 import './style.scss'
-import Dropdown from '../../components/Dropdown'
 
 const Toolbar = ({cn, data}) => {
     const [view, setView] = useState("card")
@@ -20,21 +17,20 @@ const Toolbar = ({cn, data}) => {
     return (
         <div className={cn}>
             <div className="toolbar_left">
-                <ButtonGroup cn={btn["button-toggle"]} selected={view}>
-                    <Button cn={btn["button--card"]} variant="icon" onClick={(e) => setView("card")}>
+                <ButtonGroup selected={view}>
+                    <Button cn={'button--card'} variant="icon" onClick={(e) => setView("card")}>
                         <Icon value="faGrip" />
                     </Button>
-                    <Button cn={btn["button--list"]} variant="icon" onClick={(e) => setView("list")}>
+                    <Button cn={'button--list'} variant="icon" onClick={(e) => setView("list")}>
                         <Icon value="faList" />
                     </Button>
                 </ButtonGroup>
-                <Search data={data} variant="filled" style={{minWidth: 400}}/>
+                <Search cn="search--courses" data={data} size="medium" variant="filled" style={{minWidth: 400}}/>
             </div>
             <div className="toolbar_right">
-                {/* <Select options={orderTypeData} value={orderType} onChange={o => setOrderType(o)} /> */}
                 <Select placeholder={orderTypeData[0].label} options={orderTypeData} onChange={(value) => console.log(value)} />
                 <Select placeholder={orderTypeData[0].label} options={orderDirectionData} onChange={(value) => console.log(value)} />
-                {/* <Dropdown items={orderTypeData} /> */}
+                <Select placeholder={orderTypeData[0].label} options={orderTypeData} isMulti={true} onChange={(value) => console.log(value)} />
                 <Button cn={["list"]} variant="icon" onClick={(e) => setFilterVisibility(prev => !prev)}><Icon value="faFilter" /></Button>
             </div>
         </div>

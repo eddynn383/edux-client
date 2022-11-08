@@ -4,7 +4,9 @@
     border: var(--profile-border-width, var(--border-width-100, 1px)) solid var(--profile-border-color, var(--border-color-200, #DDE0E4));
     border-radius: var(--border-radius-400);
     &_user {
-        display: flex;
+        display: grid;
+        grid-template-columns: 70px auto 40px;
+        align-items: center;
         border-radius: var(--border-radius-200);
         .user_details {
             display: flex;

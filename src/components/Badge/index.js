@@ -1,6 +1,6 @@
-import sx from './component.module.scss'
+import './style.scss'
 
-const Badge = ({cn, id, value, max, theme="primary", variant="contained", size, type="info", title, children}) => {
+const Badge = ({ cn, id, value, max, theme="primary", variant="contained", size, type="info", title, children }) => {
     const val = max ? (value > max ? `${max}+` : `${value}`) : `${value}`
 
     if (!value && !children) {
@@ -8,7 +8,7 @@ const Badge = ({cn, id, value, max, theme="primary", variant="contained", size, 
     }
 
     return (
-        <span className={cn ? `${sx.badge} ${cn}` : `${sx.badge}`} id={id} value={val} xmax={max} xtheme={theme} xvariant={variant} xsize={size} type={type} title={title}>
+        <span className={cn ? `${'component badge'} ${cn}` : `${'component badge'}`} id={id} value={val} xmax={max} xtheme={theme} xvariant={variant} xsize={size} type={type} title={title}>
             {children ? children : val}
         </span>
     )

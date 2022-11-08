@@ -1,9 +1,8 @@
-import sx from './component.module.scss'
+import './style.scss'
 
-
-const Text = ({children, size="medium", inline, cn}) => {
+const Text = ({cn, size="medium", inline, children}) => {
     return (
-        inline ? <span class={cn ? `${sx.text} ${cn}` : `${sx.text}`} xsize={size}>{children}</span> : <p>{children}</p>
+        inline ? <span className={cn ? `${'component text'} ${cn}` : `${'component text'}`} xsize={size}>{children}</span> : <p>{children}</p>
     )
 }
 

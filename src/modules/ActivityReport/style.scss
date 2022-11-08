@@ -1,0 +1,22 @@
+.activity-report {
+    &_top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &_left {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-100);
+    }
+    &_bottom {
+        display: flex;
+        gap: var(--gap-300);
+        & > .module {
+            width: 100%;
+        }
+    }
+    &_subtitle {
+        color: var(--text-color-300);
+    }
+}

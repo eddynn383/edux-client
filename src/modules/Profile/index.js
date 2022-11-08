@@ -5,6 +5,7 @@ import useAuth from "../../hooks/useAuth"
 
 
 import './style.scss'
+import sx from '../../assets/design/component.module.scss'
 
 const Profile = ({ progress }) => {
     const { avatar, firstname, lastname, email, status } = useAuth()
@@ -15,12 +16,12 @@ const Profile = ({ progress }) => {
     return (
         <div className="module profile">
             <div className="profile_user">
-                <Cover url={avatar} alt="Profile" cn={['progress']} progressData={progress} progress={true} style={{maxWidth: "70px"}} />
+                <Cover url={avatar} alt="Profile" cn={sx['cover--progress']} progressData={progress} progress={true} style={{maxWidth: "70px"}} />
                 <div className="user_details">
                     <span className="details_name">{firstname + " " + lastname}</span>
                     <span className="details_email">{`Level ${level}`}</span>
                 </div>
-                <Button cn={['logout']} variant="text"><Icon value="faRightFromBracket"/></Button>
+                <Button cn="button--logout" variant="icon"><Icon value="faRightFromBracket"/></Button>
             </div>
         </div>  
     )

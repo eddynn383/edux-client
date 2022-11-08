@@ -8,6 +8,16 @@ body {
     margin: 0;
 }
 
+a {
+    color: var(--primary-color-200);
+    text-decoration: underline;
+    transition: color .3s ease-in-out;
+    &:hover {
+        color: var(--primary-color-300);
+        text-decoration: none;
+    }
+}
+
 h1 {
     font-size: var(--font-size-600);
     font-weight: var(--font-weight-700);
@@ -20,7 +30,7 @@ h2 {
 
 h3 {
     font-size: var(--font-size-400);
-    font-weight: var(--font-weight-500);
+    font-weight: var(--font-weight-400);
 }
 
 h4 {
@@ -33,29 +43,61 @@ h5 {
     font-weight: var(--font-weight-500);
 }
 
-// @media only screen and (max-width: 1440px) {
-//     .layout {
-//         &:not(.layout--accessibility) {
-//             grid-template-columns: 300px auto;
-//         }
-//         &--auth:not(.layout--accessibility) {
-//             grid-template-columns: 4fr 2fr;
-//         }
-//     }
-// }
+table {
+    border-collapse: collapse;
+}
 
-// @media only screen and (max-width: 1024px) {
-//     .layout {
-//         &:not(.layout--accessibility) {
-//             display: block;
-//         }
-//         &--auth:not(.layout--accessibility) {
-//             grid-template-columns: 4fr 2fr;
-//         }
-//         &_left {
-//             position: absolute;
-//             top: 0;
-//             right: 100%;
-//         }
-//     }
-// }
+tr, th {
+    padding: 0;
+    margin: 0;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--module-gap, var(--gap-200, 10px));
+}
+
+@keyframes animate-in {
+    0% {
+      background-size: 0 2px, 0 0, 0 0, 0 0; 
+    }
+  
+    25% {
+      background-size: 100% 2px, 0 0, 0 0, 0 0; 
+    }
+  
+    50% {
+      background-size: 100% 2px, 2px 100%, 0 0, 0 0; 
+    }
+  
+    75% {
+      background-size: 100% 2px, 2px 100%, 100% 2px, 0 0; 
+    }
+  
+    100% {
+      background-size: 100% 2px, 2px 100%, 100% 2px, 2px 100%; 
+    }
+}
+
+@keyframes statusBounceOverlay {
+    0% {
+        inset: 0;
+        opacity: 0.5;
+    }
+    100% {
+        inset: -10px;
+        opacity: 0;
+    }
+}
+
+@keyframes statusBounce {
+    0% {
+        inset: 0;
+        opacity: 0;
+    }
+    100% {
+        inset: -2px;
+        opacity: 1;
+    }
+}

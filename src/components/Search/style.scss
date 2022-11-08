@@ -1,14 +1,13 @@
-.input--search {
-    display: inline-block;
-    vertical-align: top;
-    .input_inner {
-        background: var(--search-background-default, var(--background-color-100, #fff));
-        border-radius: var(--search-border-radius-default, var(--border-radius-200, 10px));
-        &[variant="filled"] {
-            border: 0 solid var(--search-border-color-default, var(--border-color-200, #DDE0E4));
+.search {
+    &--page {
+        .input--search {
+            background-color: var(--background-color-200, #F0F2F4);
         }
-        &[variant="outline"] {
-            border: var(--search-border-width-default, var(--border-width-100, 1px)) solid var(--search-border-color-default, var(--border-color-200, #DDE0E4));
+    }
+    &--courses {
+        .input--search {
+            background-color: var(--background-color-100, #fff);
+            border-color: var(--border-color-50, #fff);
         }
     }
 }

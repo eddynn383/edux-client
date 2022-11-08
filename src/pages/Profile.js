@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 
-import Form from '../modules/Form'
+import Form from '../components/Form'
 import Cover from '../components/Cover'
 import Input from '../components/Input'
 import Button from '../components/Button'

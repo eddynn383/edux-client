@@ -1,0 +1,36 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--card-background, var(--background-100, #ffffff));
+    border-radius: var(--card-border-radius, var(--border-radius-300, 20px));
+    width: 100%;
+    &_top {
+        display: flex;
+        flex-direction: column;
+    }
+    &[xsize="small"] {
+        padding: var(--card-small-padding, 0);
+        gap: var(--card-small-gap, var(--gap-100, 5px));
+        .card_top {
+            gap: var(--card-top-small-gap, var(--gap-100, 5px));
+        }
+    }
+    &[xsize="medium"] {
+        padding: var(--card-medium-padding, var(--padding-200, 10px));
+        gap: var(--card-medium-gap, var(--gap-200, 10px));
+        .card_top {
+            gap: var(--card-top-medium-gap, var(--gap-200, 10px));
+        }
+    }
+    &[xsize="large"] {
+        padding: var(--card-large-padding, var(--padding-300, 20px));
+        gap: var(--card-large-gap, var(--gap-200, 10px));
+        .card_top {
+            gap: var(--card-top-large-gap, var(--gap-200, 10px));
+        }
+    }
+    &.card--no-gap {
+        gap: 0;
+    }
+}

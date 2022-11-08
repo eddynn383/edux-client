@@ -110,12 +110,11 @@ export const data = {
         borderWidth: 0,
         categoryPercentage: 0.1
     }]
-    
 };
 
-const BarChart = () => {
+const BarChart = ({cn}) => {
     return (
-        <div className="module bar-chart">
+        <div className={cn ? `${'module bar-chart'} ${cn}` : `${'module bar-chart'}`}>
             <Bar options={options} data={data} />
         </div>
     )

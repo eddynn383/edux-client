@@ -1,16 +1,12 @@
 import { useState, useEffect } from 'react';
-// import { addClass, classModifier } from '../../functions/utils';
-import Label from '../Label';
-import './style.scss';
+import './style.scss'
 
-const Input = ({ innerRef, name, type, size="medium", variant="outline", placeholder, cn, id, label, value, hideLabel=false, autoComplete, iconBefore, iconAfter, ariaInvalid, ariaDescribedBy, status, focus, style, onClick, onChange, onFocus, onBlur }) => {
+const Input = ({cn, id, name, type, innerRef, size="medium", variant="outline", placeholder, value, autoComplete, iconBefore, iconAfter, ariaInvalid, ariaDescribedBy, status, focus, style, onClick, onChange, onFocus, onBlur }) => {
     const [inputType, setInputType] = useState(type)
 
     const innerProps = {
         name,
         id,
-        type,
-        size,
         placeholder,
         value,
         autoComplete,
@@ -23,21 +19,15 @@ const Input = ({ innerRef, name, type, size="medium", variant="outline", placeho
 
     useEffect(() => {
         setInputType(type)
-    }, [type])
-
-    if(iconBefore) cn = [...cn, 'hasIconBefore']
-    if(iconAfter) cn = [...cn, 'hasIconAfter']
+    }, [type]) 
 
     return (
-        <div className={`input input--${name} ${iconBefore ? 'input--iconBefore' : ''} ${iconAfter ? 'input--iconAfter': ''}`} input-size={size} data-focus={focus} data-status={status} style={style} >
-            {label && <Label htmlFor={id} cn={`input_label ${hideLabel ? 'hide' : null}`}>{label}</Label>}
-            <div className="input_inner" variant={variant}>
-                {iconBefore}
-                {
-                    <input className="input_primitive" {...innerProps} type={inputType} aria-invalid={ariaInvalid} aria-describedby={ariaDescribedBy} />
-                }
-                {iconAfter}
-            </div>
+        <div className={cn ? `${'component input'} ${cn}` : `${'component input'}`} id={id} variant={variant} xicon={iconBefore && iconAfter ? 'both' : iconBefore ? 'before' : iconAfter ? 'after' : null } xsize={size} data-focus={focus} data-status={status} style={style} >
+            {iconBefore}
+            {
+                <input {...innerProps} type={inputType} aria-invalid={ariaInvalid} aria-describedby={ariaDescribedBy} />
+            }
+            {iconAfter}
         </div>
     )
 }

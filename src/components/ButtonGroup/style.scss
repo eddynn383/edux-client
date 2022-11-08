@@ -1,0 +1,24 @@
+.button-group {
+    border-radius: var(--button-toggle-border-radius, var(--border-radius-color-200, 10px));
+    overflow: hidden;
+    .button {
+        &[xtheme="primary"][xvariant="icon"] {
+            padding: 12px;
+            border-radius: 0;
+            background-color: var(--button-background-selected, var(--background-color-100, #fff));
+            color: var(--button-text-selected, var(--text-color-100, #000));
+            svg {
+                width: 16px;
+                height: 16px;
+                line-height: 1;
+            }
+        }
+    }
+    &[xselected="card"] .button--card,
+    &[xselected="list"] .button--list {
+        &[xtheme="primary"][xvariant="icon"] {
+            background-color: var(--button-background-selected, var(--primary-color-200, #153E8E));
+            color: var(--button-text-selected, var(--text-color-600, #fff));
+        }
+    }
+}

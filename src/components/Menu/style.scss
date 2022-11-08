@@ -5,6 +5,7 @@
     height: 100%;
     overflow: hidden auto;   
     ul {
+        position: relative;
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
@@ -29,6 +30,7 @@
                 border-radius: var(--nav-link-border-radius, var(--border-radius-200, 10px));
                 // border-left: var(--nav-link-border, 4px solid transparent);
                 transition: all .3s ease-in-out;
+                cursor: pointer;
                 .icon--link {
                     color: var(--nav-link-icon-color, #a5acb6);
                 }
@@ -57,19 +59,19 @@
 
             }
             &.has-children {
-                &.open {
+                & > .dropdown {
                     position: absolute;
                     top: 0;
                     bottom: 0;
                     left: 100%;
-                    background-color: #fff;
+                    background-color: var(--background-color-100, #fff);
                     opacity: 0;
                     transition: all 0.3s ease;
                     z-index: 1;
                 }
-                &.close {
-                    left: 0;
+                &.open > .dropdown {
                     opacity: 1;
+                    left: 0;
                 }
             }
             

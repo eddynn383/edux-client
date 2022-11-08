@@ -1,9 +1,10 @@
 import Title from "../../components/Title"
+import Card from "../../components/Card"
 import './style.scss'
 
 const Banner = ({cn, title, user, height, coverURL}) => {
     return (
-        <div className={`module banner ${cn}`}>
+        <Card cn="banner" size="small">
             <div className="banner_outer" style={{height: `${height}px`}}>
                 <div className="banner_inner" style={{backgroundImage: `url(${coverURL})`}}>
                     <Title cn="banner_title" type="section">
@@ -12,7 +13,10 @@ const Banner = ({cn, title, user, height, coverURL}) => {
                     </Title>
                 </div>
             </div>
-        </div>
+        </Card>
+        // <div className={`module banner ${cn}`}>
+            
+        // </div>
     )
 }
 

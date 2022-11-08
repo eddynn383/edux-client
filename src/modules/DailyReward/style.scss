@@ -1,0 +1,50 @@
+.daily-reward {
+    max-height: 300px;
+    &_content {
+        overflow-y: auto;
+        .item {
+            display: flex;
+            align-items: center;
+            gap: var(--gap-200);
+            padding: var(--padding-200);
+            &_center {
+                width: 100%;
+                .title {
+                    &_text {
+                        color: var(--text-color-200);
+                    }
+                }
+                .timeline {
+                    color: var(--text-color-300);
+                }
+            }
+            &_right {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                gap: var(--gap-100);
+                .percentage {
+                    display: flex;
+                    gap: var(--gap-100);
+                    &.success {
+                        color: var(--success-color-200);
+                    }
+                    &.fail {
+                        color: var(--fail-color-200);
+                    }
+                }
+                .points {
+                    color: var(--text-color-300);
+                }
+            }
+            
+            &:nth-child(odd) {
+                background-color: var(--background-color-100);
+            }
+
+            &:nth-child(even) {
+                background-color: var(--background-color-200);
+            }
+        }
+    }
+}

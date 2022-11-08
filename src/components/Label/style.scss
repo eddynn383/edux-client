@@ -1,0 +1,12 @@
+.label {
+    display: inline-block;
+    margin-bottom: 5px;
+    &[hidden] {
+        display: none;
+        width: 0;
+        height: 0;
+        margin: 0;
+        font-size: 0;
+        line-height: 0;
+    }
+}

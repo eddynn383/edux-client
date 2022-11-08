@@ -7,9 +7,3 @@
 #dashboard .module--no-padding {
     padding: 0;
 }
-
-.user-timeline {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
