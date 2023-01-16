@@ -63,18 +63,18 @@
         }
     }
     &[xsize="small"] {
-        padding: var(--input-padding, var(--padding-100, 5px));
+        padding: var(--input-padding, var(--padding-100, 4px));
     }
     
     &[xsize="medium"] {
-        padding: var(--input-padding, var(--padding-200, 10px));
+        padding: var(--input-padding, var(--padding-200, 8px));
         input {
             line-height: 18px;
         }
     }
     
     &[xsize="large"] {
-        padding: var(--input-padding, var(--padding-200, 10px));
+        padding: var(--input-padding, var(--padding-200, 8px));
         input {
             line-height: 26px;
         }

@@ -18,7 +18,7 @@
                     }
                     &:hover, 
                     &:focus {
-                        color: var(--nav-link-color-hover, var(--primary-color-200, #1C6BBA));
+                        color: var(--nav-link-color-hover, var(--accent-color-200, #1C6BBA));
                     }
                     &.link--active {
                         border: none;
@@ -27,7 +27,7 @@
                     }
                     &.link--active:hover, 
                     &.link--active:focus {
-                        color: var(--nav-link-color-hover, var(--primary-color-200, #1C6BBA));
+                        color: var(--nav-link-color-hover, var(--accent-color-200, #1C6BBA));
                     }
                 }
             }

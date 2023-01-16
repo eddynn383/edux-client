@@ -17,7 +17,7 @@
     &[xselected="card"] .button--card,
     &[xselected="list"] .button--list {
         &[xtheme="primary"][xvariant="icon"] {
-            background-color: var(--button-background-selected, var(--primary-color-200, #153E8E));
+            background-color: var(--button-background-selected, var(--accent-color-200, #153E8E));
             color: var(--button-text-selected, var(--text-color-600, #fff));
         }
     }

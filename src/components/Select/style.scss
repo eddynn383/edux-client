@@ -55,7 +55,7 @@
             &-icon {
                 color: var(--select-tag-icon-default-color, var(--text-color-300));
                 &:hover {
-                    color: var(--select-tag-icon-hover-color, var(--primary-color-200));
+                    color: var(--select-tag-icon-hover-color, var(--accent-color-200));
                 }
             }
         }
@@ -83,7 +83,7 @@
             padding: var(--select-options-padding, var(--padding-200, 10px));
             background-color: var(--select-option-background-default, var(--background-color-100, #fff));
             &:hover {
-                background-color: var(--select-option-background-hover, var(--primary-color-200, #f4f3f2));
+                background-color: var(--select-option-background-hover, var(--accent-color-200, #f4f3f2));
                 color: var(--select-option-color-hover, var(--text-color-600, #ffffff));
                 cursor: pointer;
             }

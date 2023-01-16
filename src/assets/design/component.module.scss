@@ -48,13 +48,13 @@
         color: var(--button-text-default, var(--text-color-100, #000000));
         transition: .3s ease-in-out;
         &:hover {
-            color: var(--button-text-hover, var(--primary-color-200, #1C6BBA));
+            color: var(--button-text-hover, var(--accent-color-200, #1C6BBA));
         }
     }
 
     &[xtheme="primary"][xvariant="contained"] {
-        background-color: var(--button-background-default, var(--primary-color-200, #1C6BBA));
-        border: var(--border-width-100) solid var(--button-border-default, var(--primary-color-200, #1C6BBA));
+        background-color: var(--button-background-default, var(--accent-color-200, #1C6BBA));
+        border: var(--border-width-100) solid var(--button-border-default, var(--accent-color-200, #1C6BBA));
         color: var(--button-text-default, var(--text-color-600, #fff));
         transition: .3s ease-in-out;
         &:hover {
@@ -78,12 +78,12 @@
 
     &[xtheme="primary"][xvariant="outlined"] {
         background-color: var(--button-background-default, var(--background-color-100, #ffffff));
-        border: var(--border-width-100) solid var(--button-border-default, var(--primary-color-200, #1C6BBA));
-        color: var(--button-text-default, var(--primary-color-200, #1C6BBA));
+        border: var(--border-width-100) solid var(--button-border-default, var(--accent-color-200, #1C6BBA));
+        color: var(--button-text-default, var(--accent-color-200, #1C6BBA));
         transition: .3s ease-in-out;
         &:hover {
-            background-color: var(--button-background-hover, var(--primary-color-200, #1C6BBA));
-            border: var(--border-width-100) solid var(--button-border-hover, var(--primary-color-200, #1C6BBA));
+            background-color: var(--button-background-hover, var(--accent-color-200, #1C6BBA));
+            border: var(--border-width-100) solid var(--button-border-hover, var(--accent-color-200, #1C6BBA));
             color: var(--button-text-hover, var(--text-color-600, #ffffff));
         }
     }
@@ -105,7 +105,7 @@
         color: var(--button-text-default, var(--text-color-100, #000000));
         transition: .3s ease-in-out;
         &:hover {
-            background-color: var(--button-background-hover, var(--primary-color-200, #1C6BBA));
+            background-color: var(--button-background-hover, var(--accent-color-200, #1C6BBA));
             color: var(--button-text-hover, var(--text-color-600, #ffffff));
         }
     }
@@ -169,7 +169,7 @@
         cursor: pointer;
         &:hover,
         &:focus {
-            background-color: var(--button-background-default, var(--primary-color-200, #1C6BBA));
+            background-color: var(--button-background-default, var(--accent-color-200, #1C6BBA));
             color: var(--button-text-default, var(--primary-600, #fff));
         }
     }
@@ -184,7 +184,7 @@
         transition: .3s ease-in-out;
         &:hover,
         &:focus {
-            background-color: var(--button-background-default, var(--primary-color-200, #1C6BBA));
+            background-color: var(--button-background-default, var(--accent-color-200, #1C6BBA));
             color: var(--button-text-default, var(--primary-600, #fff));
         }
     }
@@ -244,7 +244,7 @@
     &[xselected="card"] .button--card,
     &[xselected="list"] .button--list {
         &[xtheme="primary"][xvariant="icon"] {
-            background-color: var(--button-background-selected, var(--primary-color-200, #153E8E));
+            background-color: var(--button-background-selected, var(--accent-color-200, #153E8E));
             color: var(--button-text-selected, var(--text-color-600, #fff));
         }
     }
@@ -686,14 +686,14 @@
                 }
                 &:hover,
                 &:focus {
-                    color: var(--nav-link-color-hover, var(--primary-color-200, #1C6BBA));
+                    color: var(--nav-link-color-hover, var(--accent-color-200, #1C6BBA));
                     .icon--link {
                         color: var(--nav-link-icon-color-hover, #1C6BBA);
                     }
                 }
                 &.link--active {
-                    // border-left: var(--nav-link-border-active, var(--border-width-300) solid var(--primary-color-200, #1C6BBA));
-                    background-color: var(--nav-link-background-active, var(--primary-color-200, #1C6BBA));
+                    // border-left: var(--nav-link-border-active, var(--border-width-300) solid var(--accent-color-200, #1C6BBA));
+                    background-color: var(--nav-link-background-active, var(--accent-color-200, #1C6BBA));
                     color: var(--nav-link-background-active, var(--text-color-600, #fff));
                     .icon--link {
                         color: var(--nav-link-icon-color, #fff);
@@ -829,7 +829,7 @@
             &-icon {
                 color: var(--select-tag-icon-default-color, var(--text-color-300));
                 &:hover {
-                    color: var(--select-tag-icon-hover-color, var(--primary-color-200));
+                    color: var(--select-tag-icon-hover-color, var(--accent-color-200));
                 }
             }
         }
@@ -856,7 +856,7 @@
             padding: var(--select-options-padding, var(--padding-200, 10px));
             background-color: var(--select-option-background-default, var(--background-color-100, #fff));
             &:hover {
-                background-color: var(--select-option-background-hover, var(--primary-color-200, #f4f3f2));
+                background-color: var(--select-option-background-hover, var(--accent-color-200, #f4f3f2));
                 color: var(--select-option-color-hover, var(--text-color-600, #ffffff));
                 cursor: pointer;
             }

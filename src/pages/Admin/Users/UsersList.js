@@ -14,9 +14,11 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import Badge from '@mui/material/Badge';
 import MailIcon from '@mui/icons-material/Mail';
+
+import Button from "../../../components/Button";
 
 
 const columns = [
@@ -125,7 +127,7 @@ const Users = () => {
     return (
         <>
             {/* <Menu {...attrs.menu} /> */}
-            <article>
+            <article style={{'padding': '20px', 'display': 'flex', 'flexDirection': 'column', 'gap': '20px'}}>
                 {/* <h2>Users List</h2>
                 {users?.length
                     ? (
@@ -134,15 +136,83 @@ const Users = () => {
                         </ul>
                     ) : <p>No users to display</p>
                 } */}
+                <div style={{'display': 'flex', 'gap': '20px', 'marginBottom': '20px'}}>
+                    <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="large" variant="solid">Accent Solid</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="medium" variant="solid">Accent Solid</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="small" variant="solid">Accent Solid</Button>
+                        </div>
+                    </div>
+                    <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="large" variant="outline">Accent Outline</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="medium" variant="outline">Accent Outline</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="small" variant="outline">Accent Outline</Button>
+                        </div>
+                    </div>
+                    <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="large" variant="text">Accent Text</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="medium" variant="text">Accent Text</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="small" variant="text">Accent Text</Button>
+                        </div>
+                    </div>
+                </div>
+                <div style={{'display': 'flex', 'gap': '20px', 'marginBottom': '20px'}}>
+                    <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="large" variant="solid" disabled>Disabled Accent Solid</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="medium" variant="solid" disabled>Disabled Accent Solid</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="small" variant="solid" disabled>Disabled Accent Solid</Button>
+                        </div>
+                    </div>
+                    <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="large" variant="outline" disabled>Disabled Accent Outline</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="medium" variant="outline" disabled>Disabled Accent Outline</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="small" variant="outline" disabled>Disabled Accent Outline</Button>
+                        </div>
+                    </div>
+                    <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="large" variant="text" disabled>Disabled Accent Text</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="medium" variant="text" disabled>Disabled Accent Text</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="small" variant="text" disabled>Disabled Accent Text</Button>
+                        </div>
+                    </div>
+                </div>
 
-                <Button color='primary' variant="contained">Test</Button>
-
-                <Badge badgeContent={4} color="primary">
+                {/* <Badge badgeContent={4} color="primary">
                     <MailIcon color="action" />
-                </Badge>
+                </Badge> */}
 
 
-                <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+                {/* <Paper sx={{ width: '100%', overflow: 'hidden' }}>
                     <TableContainer sx={{ maxHeight: 440 }}>
                         <Table stickyHeader aria-label="sticky table">
                         <TableHead>
@@ -189,7 +259,7 @@ const Users = () => {
                         onPageChange={handleChangePage}
                         onRowsPerPageChange={handleChangeRowsPerPage}
                     />
-                </Paper>
+                </Paper> */}
             </article>
         </>
     );

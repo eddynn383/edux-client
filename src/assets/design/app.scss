@@ -9,11 +9,11 @@ body {
 }
 
 a {
-    color: var(--primary-color-200);
+    color: var(--accent-color-200);
     text-decoration: underline;
     transition: color .3s ease-in-out;
     &:hover {
-        color: var(--primary-color-300);
+        color: var(--accent-color-300);
         text-decoration: none;
     }
 }

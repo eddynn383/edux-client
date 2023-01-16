@@ -1,6 +1,6 @@
 import './style.scss'
 
-const Badge = ({ cn, id, value, max, theme="primary", variant="contained", size, type="info", title, children }) => {
+const Badge = ({ cn, id, value, max, theme="primary", variant="solid", size, type="info", title, children }) => {
     const val = max ? (value > max ? `${max}+` : `${value}`) : `${value}`
 
     if (!value && !children) {

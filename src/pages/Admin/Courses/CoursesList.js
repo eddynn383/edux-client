@@ -22,10 +22,20 @@ import Card from '../../../components/Card'
 import Checkbox from '../../../components/Checkbox'
 import Button from '../../../components/Button'
 import CustomTable from '../../../components/CustomTable'
+import CustomTable2 from '../../../components/CustomTable2'
 import Cover from '../../../components/Cover'
+import Search from '../../../components/Search'
+import Pagination from '../../../modules/Pagination'
 
 const Courses = () => {
     const { setTitle } = useNav()
+    // const [isLoading, setIsLoading] = useState(true)
+    // const [data, setData] = useState([])
+    const [pageCount, setPageCount] = useState(0)
+    const [entriesCount, setEntriesCount] = useState(0)
+    const [search, setSearch] = useState('')
+
+
     const {
         data: courses,
         isLoading,
@@ -44,23 +54,29 @@ const Courses = () => {
     
     const columns = useMemo(() => [{
             Header: "ID",
-            accessor: "courseID"
+            accessor: "courseID",
+            width: 70,
         }, {
             Header: "Image",
             accessor: 'cover.url',
-            Cell: ImageCell
+            Cell: ImageCell,
+            width: 70,
         }, {
             Header: "Title",
-            accessor: "title"
+            accessor: "title",
+            width: 70,
         },  {
             Header: "Chapters",
-            accessor: "chapters"
+            accessor: "chapters",
+            width: 70,
         }, {
             Header: "Last Update",
-            accessor: "updatedAt"
+            accessor: "updatedAt",
+            width: 70,
         }, {
             Header: "Created At",
-            accessor: "createdAt"
+            accessor: "createdAt",
+            width: 70,
         }], []
     );
             
@@ -84,20 +100,26 @@ const Courses = () => {
             <>
                 <div className="body_content">
                     <div className="body_left">
+                        <Search value={search} onChange={(term) => {
+                                setSearch(term || '')
+                            }} 
+                        />
                         <div className="module" type="card" style={{'maxHeight': '100%'}}>
-                            <Card size="large" style={{'maxHeight': '100%', 'overflowY': 'auto'}}>
-                                <CustomTable columns={columns} data={coursesData} />
+                            <Card size="large" style={{'maxHeight': '100%', 'overflowY': 'auto bv'}}>
+                                {/* <CustomTable columns={columns} data={coursesData} search={search} /> */}
+                                <CustomTable2 cn="test" columns={columns} data={coursesData} search={search} />
                             </Card>
                         </div>
+                        {/* <Pagination currentPage={pageIndex + 1} totalPages={pageOptions.length} onChange={(p) => {gotoPage(p - 1)}} /> */}
                     </div>
                 </div>
             </>
         )
     }
 
-    // useEffect(() => {
-    //     console.log(courses)
-    // }, [coursesData])
+    useEffect(() => {
+        console.log(search)
+    }, [search])
 
     useEffect(() => {
         setTitle('Courses')

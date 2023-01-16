@@ -1,119 +1,138 @@
 .button {
+    position: relative;
     font-family: 'Work Sans', sans-serif;
     border-radius: var(--button-border-radius, var(--border-radius-200, 10px));
+    letter-spacing: 0.5px;
     cursor: pointer;
     //theme
-    &[xtheme="primary"][xvariant="text"] {
+
+    &[xtheme="light"][xvariant="solid"] {
+        background-color: var(--button-background-default, var(--accent-color-400, #1C6BBA));
+        border: var(--border-width-100) solid var(--button-border-default, var(--accent-color-400, #1C6BBA));
+        color: var(--button-text-default, var(--text-color-950, #fff));
+        transition: .3s ease-in-out;
+        &:focus {
+            background-color: var(--button-background-focus, var(--accent-color-400, #1C6BBA));
+            border: var(--border-width-100) solid var(--button-border-focus, var(--accent-color-500, #165695));
+            color: var(--button-text-focus, var(--text-color-950, #ffffff));
+        }
+        &:hover {
+            background-color: var(--button-background-hover, var(--accent-color-500, #165695));
+            border: var(--border-width-100) solid var(--button-border-hover, var(--accent-color-400, #1C6BBA));
+            color: var(--button-text-hover, var(--text-color-950, #fff));
+        }
+        &:focus:before {
+            content: "";
+            position: absolute;
+            inset: -4px;
+            border: 1px solid var(--button-background-focus, var(--accent-color-500));
+            border-radius: var(--button-border-radius, var(--border-radius-250, 10px));
+        }
+        &:disabled {
+            background-color: var(--button-background-disabled, var(--accent-color-100, #A4C4E3));
+            border: var(--border-width-100) solid var(--button-border-disabled, var(--accent-color-100, #A4C4E3));
+            color: var(--button-text-disabled, var(--accent-color-200, #77A6D6));
+        }
+    }
+
+    &[xtheme="light"][xvariant="outline"] {
+        background-color: var(--button-background-default, transparent);
+        border: var(--border-width-100) solid var(--button-border-default, var(--accent-color-400, #1C6BBA));
+        color: var(--button-text-default, var(--accent-color-400, #1C6BBA));
+        transition: .3s ease-in-out;
+        &:focus {
+            background-color: var(--button-background-focus, transparent);
+            border: var(--border-width-100) solid var(--button-border-focus, var(--accent-color-500, #165695));
+            color: var(--button-text-focus, var(--accent-color-400, #1C6BBA));
+        }
+        &:hover {
+            background-color: var(--button-background-hover, var(--accent-color-400, #1C6BBA));
+            border: var(--border-width-100) solid var(--button-border-hover, var(--accent-color-400, #1C6BBA));
+            color: var(--button-text-hover, var(--text-color-950, #ffffff));
+        }
+        &:focus:before {
+            content: "";
+            position: absolute;
+            inset: -4px;
+            border: 1px solid var(--button-background-focus, var(--accent-color-500));
+            border-radius: var(--button-border-radius, var(--border-radius-250, 10px));
+        }
+        &:disabled {
+            background-color: var(--button-background-disabled, transparent);
+            border: var(--border-width-100) solid var(--button-border-disabled, var(--accent-color-100, #A4C4E3));
+            color: var(--button-text-disabled, var(--accent-color-200, #77A6D6));
+        }
+    }
+
+    &[xtheme="light"][xvariant="text"] {
+        background-color: transparent;
+        color: var(--button-text-default, var(--accent-color-400, #1C6BBA));
+        transition: .3s ease-in-out;
+        &:not(:disabled):focus {
+            background-color: var(--button-border-hover, var(--accent-color-200, #77A6D6));
+            color: var(--button-text-hover, var(--accent-color-600, #114070));
+        }
+        &:not(:disabled):hover {
+            background-color: var(--button-border-hover, var(--accent-color-100, #A4C4E3));
+            color: var(--button-text-hover, var(--accent-color-500, #165695));
+        }
+        &:not(:disabled):focus:before {
+            content: "";
+            position: absolute;
+            inset: -4px;
+            border: 1px solid var(--button-background-focus, var(--accent-color-500));
+            border-radius: var(--button-border-radius, var(--border-radius-250, 10px));
+        }
+        &:disabled {
+            color: var(--button-text-disabled, var(--accent-color-200, #77A6D6));
+        }
+    }
+
+    &[xtheme="light"][xvariant="icon"] {
+        background-color: var(--button-background-default, var(--background-color-100, #ffffff));
         color: var(--button-text-default, var(--text-color-100, #000000));
         transition: .3s ease-in-out;
         &:hover {
-            color: var(--button-text-hover, var(--primary-color-200, #1C6BBA));
-        }
-    }
-
-    &[xtheme="primary"][xvariant="contained"] {
-        background-color: var(--button-background-default, var(--primary-color-200, #1C6BBA));
-        border: var(--border-width-100) solid var(--button-border-default, var(--primary-color-200, #1C6BBA));
-        color: var(--button-text-default, var(--text-color-600, #fff));
-        transition: .3s ease-in-out;
-        &:hover {
-            background-color: var(--button-background-hover, var(--primary-300, #153E8E));
-            border: var(--border-width-100) solid var(--button-border-hover, var(--primary-300, #153E8E));
-            color: var(--button-text-hover, var(--text-color-600, #fff));
-        }
-    }
-
-    &[xtheme="secondary"][xvariant="contained"] {
-        background-color: var(--button-background-default, var(--secondary-color-200, #282828));
-        border: var(--border-width-100) solid var(--button-border-default, var(--secondary-color-200, #282828));
-        color: var(--button-text-default, var(--text-color-600, #fff));
-        transition: .3s ease-in-out;
-        &:hover {
-            background-color: var(--button-background-hover, var(--secondary-color-300, #0F0F0F));
-            border: var(--border-width-100) solid var(--button-border-hover, var(--secondary-color-300, #0F0F0F));
-            color: var(--button-text-hover, var(--text-color-600, #fff));
-        }
-    }
-
-    &[xtheme="primary"][xvariant="outlined"] {
-        background-color: var(--button-background-default, var(--background-color-100, #ffffff));
-        border: var(--border-width-100) solid var(--button-border-default, var(--primary-color-200, #1C6BBA));
-        color: var(--button-text-default, var(--primary-color-200, #1C6BBA));
-        transition: .3s ease-in-out;
-        &:hover {
-            background-color: var(--button-background-hover, var(--primary-color-200, #1C6BBA));
-            border: var(--border-width-100) solid var(--button-border-hover, var(--primary-color-200, #1C6BBA));
+            background-color: var(--button-background-hover, var(--accent-color-200, #1C6BBA));
             color: var(--button-text-hover, var(--text-color-600, #ffffff));
-        }
-    }
-
-    &[xtheme="secondary"][xvariant="outlined"] {
-        background-color: var(--button-background-default, var(--background-color-100, #ffffff));
-        border: var(--border-width-100) solid var(--secondary-color-200);
-        color: var(--button-text-default, var(--secondary-color-200, #282828));
-        transition: .3s ease-in-out;
-        &:hover {
-            background-color: var(--button-background-hover, var(--secondary-color-200, #282828));
-            border: var(--border-width-100) solid var(--secondary-color-200);
-            color: var(--button-text-hover, var(--text-color-600, #0F0F0F));
-        }
-    }
-
-    &[xtheme="primary"][xvariant="icon"] {
-        background-color: var(--button-background-default, var(--background-color-100, #ffffff));
-        color: var(--button-text-default, var(--text-color-100, #000000));
-        transition: .3s ease-in-out;
-        &:hover {
-            background-color: var(--button-background-hover, var(--primary-color-200, #1C6BBA));
-            color: var(--button-text-hover, var(--text-color-600, #ffffff));
-        }
-    }
-
-    &[xtheme="secondary"][xvariant="icon"] {
-        background-color: var(--button-background-default, var(--background-color-100, #ffffff));
-        color: var(--button-text-default, var(--text-color-100, #000000));
-        transition: .3s ease-in-out;
-        &:hover {
-            background-color: var(--button-background-hover, var(--secondary-color-200, #282828));
-            color: var(--button-text-hover, var(--text-color-600, #0F0F0F));
         }
     }
 
     // Size
     &[xsize="small"] {
-        font-size: 14px;
-        line-height: 20px;
-        padding: var(--button-padding-small-y, var(--button-padding-small, var(--padding-100, 5px))) var(--button-padding-small-x, var(--button-padding-small, var(--padding-200, 10px)));
-        height: 32px;
+        font-size: var(--button-small-font-size, var(--font-size-200, 14px));
+        font-weight: var(--button-small-font-weight, var(--font-weight-500, 500));
+        line-height: 14px;
+        padding: var(--button-small-padding-y, var(--button-small-padding, var(--padding-200, 8px))) var(--button-small-padding-x, var(--button-small-padding, var(--padding-400, 16px)));
     }
 
     &[xsize="small"][xvariant="icon"] {
         width: 32px;
-        padding: var(--button-padding-small, var(--padding-100, 5px))
+        padding: var(--button-small-padding, var(--padding-100, 5px))
     }
 
     &[xsize="medium"] {
-        font-size: 16px;
+        font-size: var(--button-medium-font-size, var(--font-size-300, 16px));
+        font-weight: var(--button-medium-font-weight, var(--font-weight-500, 500));
         line-height: 18px;
-        padding: var(--button-padding-medium-y, var(--button-padding-medium, var(--padding-200, 10px))) var(--button-padding-medium-x, var(--button-padding-medium, var(--padding-300, 20px)));
-        height: 40px;
+        padding: var(--button-medium-padding-y, var(--button-medium-padding, var(--padding-300, 12px))) var(--button-medium-padding-x, var(--button-medium-padding, var(--padding-600, 24px)));
     }
 
     &[xsize="medium"][xvariant="icon"] {
         width: 40px;
-        padding: var(--button-padding-medium, var(--padding-200, 10px))
+        padding: var(--button-medium-padding, var(--padding-200, 10px))
     }
 
     &[xsize="large"] {
-        font-size: 18px;
-        line-height: 26px;
-        padding: var(--button-padding-large-y, var(--button-padding-large, var(--padding-200, 10px))) var(--button-padding-large-x, var(--button-padding-large, var(--padding-300, 20px)));
-        height: 48px;
+        font-size: var(--button-large-font-size, var(--font-size-300, 16px));
+        font-weight: var(--button-large-font-weight, var(--font-weight-500, 500));
+        line-height: 18px;
+        padding: var(--button-large-padding-y, var(--button-large-padding, var(--padding-400, 16px))) var(--button-large-padding-x, var(--button-large-padding, var(--padding-800, 32px)));
     }
 
     &[xsize="large"][xvariant="icon"] {
         width: 48px;
-        padding: var(--button-padding-large, var(--padding-200, 10px))
+        padding: var(--button-large-padding, var(--padding-200, 10px))
     }
 
     &--search {
@@ -128,7 +147,7 @@
         cursor: pointer;
         &:hover,
         &:focus {
-            background-color: var(--button-background-default, var(--primary-color-200, #1C6BBA));
+            background-color: var(--button-background-default, var(--accent-color-200, #1C6BBA));
             color: var(--button-text-default, var(--primary-600, #fff));
         }
     }
@@ -151,7 +170,7 @@
         transition: .3s ease-in-out;
         &:hover,
         &:focus {
-            background-color: var(--button-background-default, var(--primary-color-200, #1C6BBA));
+            background-color: var(--button-background-default, var(--accent-color-200, #1C6BBA));
             color: var(--button-text-default, var(--primary-600, #fff));
         }
     }
@@ -185,7 +204,6 @@
     
     &[disabled],
     &[disabled]:hover {
-        opacity: 0.2;
         cursor: not-allowed;
     }
 }

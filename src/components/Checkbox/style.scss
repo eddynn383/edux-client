@@ -3,6 +3,10 @@
     background-color: transparent;
     border-radius: 0;
     &-label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
         user-select: none;
         cursor: pointer;
     }
@@ -22,14 +26,20 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        width: 18px;
-        height: 18px;
-        background-color: #dde0e4;
+        width: 20px;
+        height: 20px;
+        background-color: var(--background-color-300);
         border-radius: 4px;
         margin-right: 5px;
         font-size: 12px;
         #{$c}-marker-icon {
             opacity: 0;
+        }
+        .border {
+            width: 10px;
+            height: 4px;
+            border-radius: 2px;
+            background-color: var(--text-color-400);
         }
     }
 
@@ -37,9 +47,9 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        width: 18px;
-        height: 18px;
-        background-color: #dde0e4;
+        width: 20px;
+        height: 20px;
+        background-color: var(--background-color-300);
         border-radius: 4px;
         margin-right: 5px;
         font-size: 12px;
@@ -49,10 +59,13 @@
     }
 
     &-input:checked + &-marker {
-        background-color: #1C6BBA;
+        background-color: var(--accent-color-200);
         #{$c}-marker-icon {
             opacity: 1;
-            color: #fff;
+            color: var(--text-color-600);
         }
+    }
+    &-input[value="intermediate"] + &-marker {
+        background-color: var(--background-color-300);
     }
 }

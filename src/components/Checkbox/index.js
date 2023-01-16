@@ -8,11 +8,24 @@ const Checkbox = forwardRef(({ indeterminate, ...rest }, ref) => {
     const defaultRef = useRef()
     const resolvedRef = ref || defaultRef
 
-    const {cn, id, value = 'unchecked', label, type, checkmark, disabled, onChange} = rest 
+    const {cn, id, value="unchecked", label, type, symbol, disabled, onChange} = rest 
     
     // useEffect(() => {
     //     resolvedRef.current.indeterminate = indeterminate
     // }, [resolvedRef, indeterminate])
+
+    const checkboxSymbol = symbol ? symbol : <Icon cn={'checkbox-marker-icon'} value='faCheck'/>
+
+    let checkboxStateSymbol = null
+
+    switch (value) {
+        case 'checked': checkboxStateSymbol = checkboxSymbol
+            break;
+        case 'intermediate' : checkboxStateSymbol = (<span className="border"></span>)
+            break;
+        default: checkboxStateSymbol = null
+            break; 
+    }
 
     return (
         <>
@@ -29,8 +42,8 @@ const Checkbox = forwardRef(({ indeterminate, ...rest }, ref) => {
                             }
                         }} 
                     />
-                    <span className={'checkbox-marker'}>{checkmark ? checkmark : <Icon cn={'checkbox-marker-icon'} value='faCheck'/>}</span>
-                    <Text cn={'checkbox-text'} inline={true}>{label}</Text>
+                    <span className={'checkbox-marker'}>{checkboxStateSymbol}</span>
+                    {label && <Text cn={'checkbox-text'} inline={true}>{label}</Text>}
                 </Label>
             </div>
         </>

@@ -19,15 +19,15 @@
                 align-items: center;
                 width: 100%;
                 gap: var(--nav-link-gap, var(--gap-200, 10px));
-                padding-top: var(--nav-link-padding-top, var(--nav-link-padding, var(--padding-200, 10px)));
-                padding-bottom: var(--nav-link-padding-bottom, var(--nav-link-padding, var(--padding-200, 10px)));
-                padding-left: var(--nav-link-padding-left, var(--nav-link-padding, var(--padding-200, 10px)));
-                padding-right: var(--nav-link-padding-right, var(--nav-link-padding, var(--padding-200, 10px)));
                 font-size: var(--nav-link-font-size, var(--font-size-300, 16px));
                 line-height: 20px;
-                color: var(--nav-link-color-default, var(--text-color-100, #000));
+                color: var(--nav-link-color-default, var(--text-color-200, #363636));
                 background-color: var(--nav-link-background, var(--background-color-100, #fff));
-                border-radius: var(--nav-link-border-radius, var(--border-radius-200, 10px));
+                border-radius: var(--nav-link-border-radius, var(--border-radius-100, 4px));
+                padding-top: var(--nav-link-padding-top, var(--nav-link-padding, var(--padding-300, 12px)));
+                padding-bottom: var(--nav-link-padding-bottom, var(--nav-link-padding, var(--padding-300, 12px)));
+                padding-left: var(--nav-link-padding-left, var(--nav-link-padding, var(--padding-300, 12px)));
+                padding-right: var(--nav-link-padding-right, var(--nav-link-padding, var(--padding-300, 12px)));
                 // border-left: var(--nav-link-border, 4px solid transparent);
                 transition: all .3s ease-in-out;
                 cursor: pointer;
@@ -36,14 +36,14 @@
                 }
                 &:hover,
                 &:focus {
-                    color: var(--nav-link-color-hover, var(--primary-color-200, #1C6BBA));
+                    color: var(--nav-link-color-hover, var(--accent-color-200, #1C6BBA));
                     .icon--link {
                         color: var(--nav-link-icon-color-hover, #1C6BBA);
                     }
                 }
                 &.link--active {
-                    // border-left: var(--nav-link-border-active, var(--border-width-300) solid var(--primary-color-200, #1C6BBA));
-                    background-color: var(--nav-link-background-active, var(--primary-color-200, #1C6BBA));
+                    // border-left: var(--nav-link-border-active, var(--border-width-300) solid var(--accent-color-200, #1C6BBA));
+                    background-color: var(--nav-link-background-active, var(--accent-color-200, #1C6BBA));
                     color: var(--nav-link-background-active, var(--text-color-600, #fff));
                     .icon--link {
                         color: var(--nav-link-icon-color, #fff);
