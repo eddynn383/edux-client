@@ -1,92 +1,244 @@
 .button {
     position: relative;
     font-family: 'Work Sans', sans-serif;
-    border-radius: var(--button-border-radius, var(--border-radius-200, 10px));
     letter-spacing: 0.5px;
+    line-height: 18px;
     cursor: pointer;
-    //theme
+    // THEME: Light
 
-    &[xtheme="light"][xvariant="solid"] {
-        background-color: var(--button-background-default, var(--accent-color-400, #1C6BBA));
-        border: var(--border-width-100) solid var(--button-border-default, var(--accent-color-400, #1C6BBA));
-        color: var(--button-text-default, var(--text-color-950, #fff));
-        transition: .3s ease-in-out;
-        &:focus {
-            background-color: var(--button-background-focus, var(--accent-color-400, #1C6BBA));
-            border: var(--border-width-100) solid var(--button-border-focus, var(--accent-color-500, #165695));
-            color: var(--button-text-focus, var(--text-color-950, #ffffff));
-        }
-        &:hover {
-            background-color: var(--button-background-hover, var(--accent-color-500, #165695));
-            border: var(--border-width-100) solid var(--button-border-hover, var(--accent-color-400, #1C6BBA));
-            color: var(--button-text-hover, var(--text-color-950, #fff));
-        }
-        &:focus:before {
-            content: "";
-            position: absolute;
-            inset: -4px;
-            border: 1px solid var(--button-background-focus, var(--accent-color-500));
-            border-radius: var(--button-border-radius, var(--border-radius-250, 10px));
-        }
-        &:disabled {
-            background-color: var(--button-background-disabled, var(--accent-color-100, #A4C4E3));
-            border: var(--border-width-100) solid var(--button-border-disabled, var(--accent-color-100, #A4C4E3));
-            color: var(--button-text-disabled, var(--accent-color-200, #77A6D6));
-        }
-    }
 
-    &[xtheme="light"][xvariant="outline"] {
-        background-color: var(--button-background-default, transparent);
-        border: var(--border-width-100) solid var(--button-border-default, var(--accent-color-400, #1C6BBA));
-        color: var(--button-text-default, var(--accent-color-400, #1C6BBA));
+    // STATUS: Accent
+    &[xtheme="light"][xvariant="solid"][xstatus="accent"] {
+        background-color: var(--button-solid-accent-background-default, var(--accent-color-400, #1C6BBA));
+        border: var(--border-width-100) solid var(--button-solid-accent-border-default, var(--accent-color-400, #1C6BBA));
+        color: var(--button-solid-accent-text-default, var(--text-color-950, #fff));
         transition: .3s ease-in-out;
-        &:focus {
-            background-color: var(--button-background-focus, transparent);
-            border: var(--border-width-100) solid var(--button-border-focus, var(--accent-color-500, #165695));
-            color: var(--button-text-focus, var(--accent-color-400, #1C6BBA));
-        }
-        &:hover {
-            background-color: var(--button-background-hover, var(--accent-color-400, #1C6BBA));
-            border: var(--border-width-100) solid var(--button-border-hover, var(--accent-color-400, #1C6BBA));
-            color: var(--button-text-hover, var(--text-color-950, #ffffff));
-        }
-        &:focus:before {
-            content: "";
-            position: absolute;
-            inset: -4px;
-            border: 1px solid var(--button-background-focus, var(--accent-color-500));
-            border-radius: var(--button-border-radius, var(--border-radius-250, 10px));
-        }
-        &:disabled {
-            background-color: var(--button-background-disabled, transparent);
-            border: var(--border-width-100) solid var(--button-border-disabled, var(--accent-color-100, #A4C4E3));
-            color: var(--button-text-disabled, var(--accent-color-200, #77A6D6));
-        }
-    }
-
-    &[xtheme="light"][xvariant="text"] {
-        background-color: transparent;
-        color: var(--button-text-default, var(--accent-color-400, #1C6BBA));
-        transition: .3s ease-in-out;
-        &:not(:disabled):focus {
-            background-color: var(--button-border-hover, var(--accent-color-200, #77A6D6));
-            color: var(--button-text-hover, var(--accent-color-600, #114070));
-        }
         &:not(:disabled):hover {
-            background-color: var(--button-border-hover, var(--accent-color-100, #A4C4E3));
-            color: var(--button-text-hover, var(--accent-color-500, #165695));
+            background-color: var(--button-solid-accent-background-hover, var(--accent-color-500, #165695));
+            border: var(--border-width-100) solid var(--button-solid-accent-border-hover, var(--accent-color-500, #165695));
+            color: var(--button-solid-accent-text-hover, var(--text-color-950, #fff));
         }
-        &:not(:disabled):focus:before {
+        &:focus {
+            background-color: var(--button-solid-accent-background-focus, var(--accent-color-400, #1C6BBA));
+            border: var(--border-width-100) solid var(--button-solid-accent-border-focus, var(--accent-color-500, #165695));
+            color: var(--button-solid-accent-text-focus, var(--text-color-950, #ffffff));
+        }
+        &:not(:disabled):focus:hover {
+            background-color: var(--button-solid-accent-background-hover, var(--accent-color-500, #165695));
+        }
+        &:focus:before {
             content: "";
             position: absolute;
             inset: -4px;
-            border: 1px solid var(--button-background-focus, var(--accent-color-500));
-            border-radius: var(--button-border-radius, var(--border-radius-250, 10px));
+            border: var(--border-width-100) solid var(--button-solid-accent-background-focus, var(--accent-color-500, #165695));
         }
         &:disabled {
-            color: var(--button-text-disabled, var(--accent-color-200, #77A6D6));
+            background-color: var(--button-solid-accent-background-disabled, var(--accent-color-100, #A4C4E3));
+            border: var(--border-width-100) solid var(--button-solid-accent-border-disabled, var(--accent-color-100, #A4C4E3));
+            color: var(--button-solid-accent-text-disabled, var(--text-color-950, #ffffff));
         }
     }
+
+    &[xtheme="light"][xvariant="outline"][xstatus="accent"] {
+        background-color: var(--button-outline-accent-background-default, var(--background-color-100, #ffffff));
+        border: var(--border-width-100) solid var(--button-outline-accent-border-default, var(--accent-color-400, #1C6BBA));
+        color: var(--button-outline-accent-text-default, var(--accent-color-400, #1C6BBA));
+        transition: .3s ease-in-out;
+        &:not(:disabled):hover {
+            background-color: var(--button-outline-accent-background-hover, var(--accent-color-400, #1C6BBA));
+            border: var(--border-width-100) solid var(--button-outline-accent-border-hover, var(--accent-color-400, #1C6BBA));
+            color: var(--button-outline-accent-text-hover, var(--text-color-950, #ffffff));
+        }
+        &:focus {
+            background-color: var(--button-outline-accent-background-focus, var(--background-color-100, #ffffff));
+            border: var(--border-width-100) solid var(--button-outline-accent-border-focus, var(--accent-color-500, #165695));
+            color: var(--button-outline-accent-text-focus, var(--accent-color-400, #1C6BBA));
+        }
+        &:not(:disabled):focus:hover {
+            background-color: var(--button-outline-accent-background-hover, var(--accent-color-400, #1C6BBA));
+            color: var(--button-outline-accent-text-hover, var(--text-color-950, #ffffff));    
+        }
+        &:focus:before {
+            content: "";
+            position: absolute;
+            inset: -4px;
+            border: var(--border-width-100) solid var(--button-outline-accent-background-focus, var(--accent-color-500, #165695));
+        }
+        &:disabled {
+            background-color: var(--button-outline-accent-background-disabled, var(--background-color-100, #ffffff));
+            border: var(--border-width-100) solid var(--button-outline-accent-border-disabled, var(--accent-color-100, #A4C4E3));
+            color: var(--button-outline-accent-text-disabled, var(--accent-color-100, #A4C4E3));
+        }
+    }
+
+    &[xtheme="light"][xvariant="opposite"][xstatus="accent"] {
+        background-color: var(--button-opposite-accent-background-default, var(--background-color-100, #ffffff));
+        border: var(--border-width-100) solid var(--button-opposite-accent-border-default, var(--background-color-100, #ffffff));
+        color: var(--button-opposite-accent-text-default, var(--accent-color-400, #1C6BBA));
+        transition: .3s ease-in-out;
+        &:not(:disabled):hover {
+            background-color: var(--button-opposite-accent-background-hover, var(--accent-color-400, #1C6BBA));
+            border: var(--border-width-100) solid var(--button-opposite-accent-border-hover, var(--accent-color-400, #1C6BBA));
+            color: var(--button-opposite-accent-text-hover, var(--text-color-950, #ffffff));
+        }
+        &:not(:disabled):focus:hover {
+            background-color: var(--button-opposite-accent-background-hover, var(--accent-color-400, #1C6BBA));
+            color: var(--button-opposite-accent-text-hover, var(--text-color-950, #ffffff));    
+        }
+        &:focus:before {
+            content: "";
+            position: absolute;
+            inset: -4px;
+            border: var(--border-width-100) solid var(--button-opposite-accent-background-focus, var(--accent-color-400, #1C6BBA));
+        }
+        &:disabled {
+            color: var(--button-opposite-accent-text-disabled, var(--accent-color-100, #A4C4E3));
+        }
+    }
+
+    &[xtheme="light"][xvariant="text"][xstatus="accent"] {
+        background-color: var(--button-text-accent-background-default, transparent);
+        border: var(--border-width-100) solid var(--button-text-accent-border-default, transparent);
+        color: var(--button-text-accent-text-default, var(--text-color-200, #363636));
+        transition: .3s ease-in-out;
+        &:not(:disabled):hover {
+            background-color: var(--button-text-accent-background-hover, var(--accent-color-400, #1C6BBA));
+            border: var(--border-width-100) solid var(--button-text-accent-border-hover, var(--accent-color-400, #1C6BBA));
+            color: var(--button-text-accent-text-hover, var(--text-color-950, #ffffff));
+        }
+        &:not(:disabled):focus:hover {
+            background-color: var(--button-text-accent-background-hover, var(--accent-color-400, #1C6BBA));
+            color: var(--button-text-accent-text-hover, var(--text-color-950, #ffffff));    
+        }
+        &:focus:before {
+            content: "";
+            position: absolute;
+            inset: -4px;
+            border: var(--border-width-100) solid var(--button-text-accent-background-focus, var(--background-color-900, #2E2F30));
+        }
+        &:disabled {
+            color: var(--button-text-accent-text-disabled, var(--text-color-800, #CACACA));
+        }
+    }
+
+
+
+    // STATUS: Success
+    &[xtheme="light"][xvariant="solid"][xstatus="success"] {
+        background-color: var(--button-solid-success-background-default, var(--success-color-400, #4CB963));
+        border: var(--border-width-100) solid var(--button-solid-success-border-default, var(--success-color-400, #4CB963));
+        color: var(--button-solid-success-text-default, var(--text-color-950, #fff));
+        transition: .3s ease-in-out;
+        &:not(:disabled):hover {
+            background-color: var(--button-solid-success-background-hover, var(--success-color-500, #3D944F));
+            border: var(--border-width-100) solid var(--button-solid-success-border-hover, var(--success-color-500, #3D944F));
+            color: var(--button-solid-success-text-hover, var(--text-color-950, #fff));
+        }
+        &:focus {
+            background-color: var(--button-solid-success-background-focus, var(--success-color-400, #4CB963));
+            border: var(--border-width-100) solid var(--button-solid-success-border-focus, var(--success-color-500, #3D944F));
+            color: var(--button-solid-success-text-focus, var(--text-color-950, #ffffff));
+        }
+        &:not(:disabled):focus:hover {
+            background-color: var(--button-solid-success-background-hover, var(--success-color-500, #3D944F));
+        }
+        &:focus:before {
+            content: "";
+            position: absolute;
+            inset: -4px;
+            border: var(--border-width-100) solid var(--button-solid-success-background-focus, var(--success-color-500, #3D944F));
+        }
+        &:disabled {
+            background-color: var(--button-solid-success-background-disabled, var(--success-color-100, #C9EAD0));
+            border: var(--border-width-100) solid var(--button-solid-success-border-disabled, var(--success-color-100, #C9EAD0));
+            color: var(--button-solid-success-text-disabled, var(--text-color-950, #ffffff));
+        }
+    }
+
+    &[xtheme="light"][xvariant="outline"][xstatus="success"] {
+        background-color: var(--button-outline-success-background-default, var(--background-color-100, #ffffff));
+        border: var(--border-width-100) solid var(--button-outline-success-border-default, var(--success-color-400, #4CB963));
+        color: var(--button-outline-success-text-default, var(--success-color-400, #4CB963));
+        transition: .3s ease-in-out;
+        &:not(:disabled):hover {
+            background-color: var(--button-outline-success-background-hover, var(--success-color-400, #4CB963));
+            border: var(--border-width-100) solid var(--button-outline-success-border-hover, var(--success-color-400, #4CB963));
+            color: var(--button-outline-success-text-hover, var(--text-color-950, #ffffff));
+        }
+        &:focus {
+            background-color: var(--button-outline-success-background-focus, var(--background-color-100, #ffffff));
+            border: var(--border-width-100) solid var(--button-outline-success-border-focus, var(--success-color-500, #3D944F));
+            color: var(--button-outline-success-text-focus, var(--success-color-400, #4CB963));
+        }
+        &:not(:disabled):focus:hover {
+            background-color: var(--button-outline-success-background-hover, var(--success-color-400, #4CB963));
+            color: var(--button-outline-success-text-hover, var(--text-color-950, #ffffff));    
+        }
+        &:focus:before {
+            content: "";
+            position: absolute;
+            inset: -4px;
+            border: var(--border-width-100) solid var(--button-outline-success-background-focus, var(--success-color-500, #3D944F));
+        }
+        &:disabled {
+            background-color: var(--button-outline-success-background-disabled, var(--background-color-100, #ffffff));
+            border: var(--border-width-100) solid var(--button-outline-success-border-disabled, var(--success-color-100, #C9EAD0));
+            color: var(--button-outline-success-text-disabled, var(--success-color-100, #C9EAD0));
+        }
+    }
+
+    &[xtheme="light"][xvariant="opposite"][xstatus="success"] {
+        background-color: var(--button-opposite-success-background-default, var(--background-color-100, #ffffff));
+        border: var(--border-width-100) solid var(--button-opposite-success-border-default, var(--background-color-100, #ffffff));
+        color: var(--button-success-text-default, var(--success-color-400, #4CB963));
+        transition: .3s ease-in-out;
+        &:not(:disabled):hover {
+            background-color: var(--button-success-background-hover, var(--success-color-400, #4CB963));
+            border: var(--border-width-100) solid var(--button-success-border-hover, var(--success-color-400, #4CB963));
+            color: var(--button-success-text-hover, var(--text-color-950, #ffffff));
+        }
+        &:not(:disabled):focus:hover {
+            background-color: var(--button-success-background-hover, var(--success-color-400, #4CB963));
+            color: var(--button-success-text-hover, var(--text-color-950, #ffffff));    
+        }
+        &:focus:before {
+            content: "";    
+            position: absolute;
+            inset: -4px;
+            border: var(--border-width-100) solid var(--button-success-background-focus, var(--success-color-400, #4CB963));
+        }
+        &:disabled {
+            color: var(--button-success-text-disabled, var(--success-color-100, #C9EAD0));
+        }
+    }
+
+    &[xtheme="light"][xvariant="text"][xstatus="success"] {
+        background-color: var(--button-text-success-background-default, transparent);
+        border: var(--border-width-100) solid var(--button-text-success-border-default, transparent);
+        color: var(--button-text-success-text-default, var(--text-color-200, #363636));
+        transition: .3s ease-in-out;
+        &:not(:disabled):hover {
+            background-color: var(--button-text-success-background-hover, var(--success-color-400, #4CB963));
+            border: var(--border-width-100) solid var(--button-text-success-border-hover, var(--success-color-400, #4CB963));
+            color: var(--button-text-success-text-hover, var(--text-color-950, #ffffff));
+        }
+        &:not(:disabled):focus:hover {
+            background-color: var(--button-text-success-background-hover, var(--success-color-400, #4CB963));
+            color: var(--button-text-success-text-hover, var(--text-color-950, #ffffff));    
+        }
+        &:focus:before {
+            content: "";
+            position: absolute;
+            inset: -4px;
+            border: var(--border-width-100) solid var(--button-text-success-background-focus, var(--background-color-900, #2E2F30));
+        }
+        &:disabled {
+            color: var(--button-text-success-text-disabled, var(--text-color-800, #CACACA));
+        }
+    }
+
+
+
 
     &[xtheme="light"][xvariant="icon"] {
         background-color: var(--button-background-default, var(--background-color-100, #ffffff));
@@ -102,37 +254,58 @@
     &[xsize="small"] {
         font-size: var(--button-small-font-size, var(--font-size-200, 14px));
         font-weight: var(--button-small-font-weight, var(--font-weight-500, 500));
-        line-height: 14px;
-        padding: var(--button-small-padding-y, var(--button-small-padding, var(--padding-200, 8px))) var(--button-small-padding-x, var(--button-small-padding, var(--padding-400, 16px)));
+        padding-top: var(--button-small-padding-y, var(--button-small-padding, var(--padding-200, 8px)));
+        padding-bottom: var(--button-small-padding-y, var(--button-small-padding, var(--padding-200, 8px)));
+        padding-left: var(--button-small-padding-x, var(--button-small-padding, var(--padding-400, 16px)));
+        padding-right: var(--button-small-padding-x, var(--button-small-padding, var(--padding-400, 16px)));
+        border-radius: var(--button-small-border-radius, var(--border-radius-150, 6px));
+        &:focus:before {
+            border-radius: calc(var(--button-small-border-radius, var(--border-radius-150, 6px)) + 2px);
+        }
     }
 
     &[xsize="small"][xvariant="icon"] {
         width: 32px;
-        padding: var(--button-small-padding, var(--padding-100, 5px))
+        padding-left: var(--button-small-padding-x, var(--button-small-padding, var(--padding-200, 8px)));
+        padding-right: var(--button-small-padding-x, var(--button-small-padding, var(--padding-200, 8px)));
     }
 
     &[xsize="medium"] {
         font-size: var(--button-medium-font-size, var(--font-size-300, 16px));
         font-weight: var(--button-medium-font-weight, var(--font-weight-500, 500));
-        line-height: 18px;
-        padding: var(--button-medium-padding-y, var(--button-medium-padding, var(--padding-300, 12px))) var(--button-medium-padding-x, var(--button-medium-padding, var(--padding-600, 24px)));
+        padding-top: var(--button-medium-padding-y, var(--button-medium-padding, var(--padding-300, 12px)));
+        padding-bottom: var(--button-medium-padding-y, var(--button-medium-padding, var(--padding-300, 12px)));
+        padding-left: var(--button-medium-padding-x, var(--button-medium-padding, var(--padding-600, 24px)));
+        padding-right: var(--button-medium-padding-x, var(--button-medium-padding, var(--padding-600, 24px)));
+        border-radius: var(--button-medium-border-radius, var(--border-radius-200, 8px));
+        &:focus:before {
+            border-radius: calc(var(--button-medium-border-radius, var(--border-radius-200, 8px)) + 2px);
+        }
     }
 
     &[xsize="medium"][xvariant="icon"] {
         width: 40px;
-        padding: var(--button-medium-padding, var(--padding-200, 10px))
+        padding-left: var(--button-medium-padding-x, var(--button-medium-padding, var(--padding-300, 12px)));
+        padding-right: var(--button-medium-padding-x, var(--button-medium-padding, var(--padding-300, 12px)));
     }
 
     &[xsize="large"] {
         font-size: var(--button-large-font-size, var(--font-size-300, 16px));
         font-weight: var(--button-large-font-weight, var(--font-weight-500, 500));
-        line-height: 18px;
-        padding: var(--button-large-padding-y, var(--button-large-padding, var(--padding-400, 16px))) var(--button-large-padding-x, var(--button-large-padding, var(--padding-800, 32px)));
+        padding-top: var(--button-large-padding-y, var(--button-large-padding, var(--padding-400, 16px)));
+        padding-bottom: var(--button-large-padding-y, var(--button-large-padding, var(--padding-400, 16px)));
+        padding-left: var(--button-large-padding-x, var(--button-large-padding, var(--padding-800, 32px)));
+        padding-right: var(--button-large-padding-x, var(--button-large-padding, var(--padding-800, 32px)));
+        border-radius: var(--button-small-border-radius, var(--border-radius-300, 12px));
+        &:focus:before {
+            border-radius: calc(var(--button-small-border-radius, var(--border-radius-300, 12px)) + 2px);
+        }
     }
 
     &[xsize="large"][xvariant="icon"] {
         width: 48px;
-        padding: var(--button-large-padding, var(--padding-200, 10px))
+        padding-left: var(--button-large-padding-x, var(--button-large-padding, var(--padding-400, 16px)));
+        padding-right: var(--button-large-padding-x, var(--button-large-padding, var(--padding-400, 16px)));
     }
 
     &--search {

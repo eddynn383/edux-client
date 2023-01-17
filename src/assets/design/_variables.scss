@@ -17,8 +17,8 @@
     --background-color-700: #5B6367;
     --background-color-800: #4D5153;
     --background-color-850: #343738;
-    --background-color-900: #272829;
-    --background-color-950: #181818;
+    --background-color-900: #2E2F30;
+    --background-color-950: #242424;
     --text-color-100: #181818;
     --text-color-150: #282828;
     --text-color-200: #363636;
@@ -64,6 +64,7 @@
     --size-025: 1px;
     --size-050: 2px;
     --size-100: 4px;
+    --size-150: 6px;
     --size-200: 8px;
     --size-250: 10px;
     --size-300: 12px;
@@ -84,6 +85,7 @@
     // Border Radius
     --border-radius-000: var(--size-000);
     --border-radius-100: var(--size-100);
+    --border-radius-150: var(--size-150);
     --border-radius-200: var(--size-200);
     --border-radius-250: var(--size-250);
     --border-radius-300: var(--size-300);

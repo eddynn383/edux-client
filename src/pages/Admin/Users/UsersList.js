@@ -127,7 +127,7 @@ const Users = () => {
     return (
         <>
             {/* <Menu {...attrs.menu} /> */}
-            <article style={{'padding': '20px', 'display': 'flex', 'flexDirection': 'column', 'gap': '20px'}}>
+            <article style={{'padding': '20px', 'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'height': 'calc(100vh - 64px)', 'overflow-y': 'auto' }}>
                 {/* <h2>Users List</h2>
                 {users?.length
                     ? (
@@ -139,70 +139,229 @@ const Users = () => {
                 <div style={{'display': 'flex', 'gap': '20px', 'marginBottom': '20px'}}>
                     <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
                         <div style={{'textAlign': 'center'}}>
-                            <Button size="large" variant="solid">Accent Solid</Button>
+                            <Button size="large" status="accent" variant="solid">Button</Button>
                         </div>
                         <div style={{'textAlign': 'center'}}>
-                            <Button size="medium" variant="solid">Accent Solid</Button>
-                        </div>
-                        <div style={{'textAlign': 'center'}}>
-                            <Button size="small" variant="solid">Accent Solid</Button>
+                            <Button size="large" status="accent" variant="solid" disabled>Button</Button>
                         </div>
                     </div>
                     <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
                         <div style={{'textAlign': 'center'}}>
-                            <Button size="large" variant="outline">Accent Outline</Button>
+                            <Button size="large" status="success" variant="solid">Button</Button>
                         </div>
                         <div style={{'textAlign': 'center'}}>
-                            <Button size="medium" variant="outline">Accent Outline</Button>
+                            <Button size="large" status="success" variant="solid" disabled>Button</Button>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div style={{'display': 'flex', 'gap': '20px', 'marginBottom': '20px'}}>
+                    <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="medium" status="accent" variant="solid">Button</Button>
                         </div>
                         <div style={{'textAlign': 'center'}}>
-                            <Button size="small" variant="outline">Accent Outline</Button>
+                            <Button size="medium" status="accent" variant="solid" disabled>Button</Button>
                         </div>
                     </div>
                     <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
                         <div style={{'textAlign': 'center'}}>
-                            <Button size="large" variant="text">Accent Text</Button>
+                            <Button size="medium" status="success" variant="solid">Button</Button>
                         </div>
                         <div style={{'textAlign': 'center'}}>
-                            <Button size="medium" variant="text">Accent Text</Button>
-                        </div>
-                        <div style={{'textAlign': 'center'}}>
-                            <Button size="small" variant="text">Accent Text</Button>
+                            <Button size="medium" status="success" variant="solid" disabled>Button</Button>
                         </div>
                     </div>
                 </div>
                 <div style={{'display': 'flex', 'gap': '20px', 'marginBottom': '20px'}}>
                     <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
                         <div style={{'textAlign': 'center'}}>
-                            <Button size="large" variant="solid" disabled>Disabled Accent Solid</Button>
+                            <Button size="small" status="accent" variant="solid">Button</Button>
                         </div>
                         <div style={{'textAlign': 'center'}}>
-                            <Button size="medium" variant="solid" disabled>Disabled Accent Solid</Button>
-                        </div>
-                        <div style={{'textAlign': 'center'}}>
-                            <Button size="small" variant="solid" disabled>Disabled Accent Solid</Button>
+                            <Button size="small" status="accent" variant="solid" disabled>Button</Button>
                         </div>
                     </div>
                     <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
                         <div style={{'textAlign': 'center'}}>
-                            <Button size="large" variant="outline" disabled>Disabled Accent Outline</Button>
+                            <Button size="small" status="success" variant="solid">Button</Button>
                         </div>
                         <div style={{'textAlign': 'center'}}>
-                            <Button size="medium" variant="outline" disabled>Disabled Accent Outline</Button>
+                            <Button size="small" status="success" variant="solid" disabled>Button</Button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div style={{'display': 'flex', 'gap': '20px', 'marginBottom': '20px'}}>
+                    <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="large" status="accent" variant="outline">Button</Button>
                         </div>
                         <div style={{'textAlign': 'center'}}>
-                            <Button size="small" variant="outline" disabled>Disabled Accent Outline</Button>
+                            <Button size="large" status="accent" variant="outline" disabled>Button</Button>
                         </div>
                     </div>
                     <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
                         <div style={{'textAlign': 'center'}}>
-                            <Button size="large" variant="text" disabled>Disabled Accent Text</Button>
+                            <Button size="large" status="success" variant="outline">Button</Button>
                         </div>
                         <div style={{'textAlign': 'center'}}>
-                            <Button size="medium" variant="text" disabled>Disabled Accent Text</Button>
+                            <Button size="large" status="success" variant="outline" disabled>Button</Button>
+                        </div>
+                    </div>
+                </div>
+                <div style={{'display': 'flex', 'gap': '20px', 'marginBottom': '20px'}}>
+                    <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="medium" status="accent" variant="outline">Button</Button>
                         </div>
                         <div style={{'textAlign': 'center'}}>
-                            <Button size="small" variant="text" disabled>Disabled Accent Text</Button>
+                            <Button size="medium" status="accent" variant="outline" disabled>Button</Button>
+                        </div>
+                    </div>
+                    <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="medium" status="success" variant="outline">Button</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="medium" status="success" variant="outline" disabled>Button</Button>
+                        </div>
+                    </div>
+                </div>
+                <div style={{'display': 'flex', 'gap': '20px', 'marginBottom': '20px'}}>
+                    <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="small" status="accent" variant="outline">Button</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="small" status="accent" variant="outline" disabled>Button</Button>
+                        </div>
+                    </div>
+                    <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="small" status="success" variant="outline">Button</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="small" status="success" variant="outline" disabled>Button</Button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div style={{'display': 'flex', 'gap': '20px', 'marginBottom': '20px'}}>
+                    <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="large" status="accent" variant="opposite">Button</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="large" status="accent" variant="opposite" disabled>Button</Button>
+                        </div>
+                    </div>
+                    <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="large" status="success" variant="opposite">Button</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="large" status="success" variant="opposite" disabled>Button</Button>
+                        </div>
+                    </div>
+                </div>
+                <div style={{'display': 'flex', 'gap': '20px', 'marginBottom': '20px'}}>
+                    <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="medium" status="accent" variant="opposite">Button</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="medium" status="accent" variant="opposite" disabled>Button</Button>
+                        </div>
+                    </div>
+                    <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="medium" status="success" variant="opposite">Button</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="medium" status="success" variant="opposite" disabled>Button</Button>
+                        </div>
+                    </div>
+                </div>
+                <div style={{'display': 'flex', 'gap': '20px', 'marginBottom': '20px'}}>
+                    <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="small" status="accent" variant="opposite">Button</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="small" status="accent" variant="opposite" disabled>Button</Button>
+                        </div>
+                    </div>
+                    <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="small" status="success" variant="opposite">Button</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="small" status="success" variant="opposite" disabled>Button</Button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div style={{'display': 'flex', 'gap': '20px', 'marginBottom': '20px'}}>
+                    <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="large" status="accent" variant="text">Button</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="large" status="accent" variant="text" disabled>Button</Button>
+                        </div>
+                    </div>
+                    <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="large" status="success" variant="text">Button</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="large" status="success" variant="text" disabled>Button</Button>
+                        </div>
+                    </div>
+                </div>
+                <div style={{'display': 'flex', 'gap': '20px', 'marginBottom': '20px'}}>
+                    <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="medium" status="accent" variant="text">Button</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="medium" status="accent" variant="text" disabled>Button</Button>
+                        </div>
+                    </div>
+                    <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="medium" status="success" variant="text">Button</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="medium" status="success" variant="text" disabled>Button</Button>
+                        </div>
+                    </div>
+                </div>
+                <div style={{'display': 'flex', 'gap': '20px', 'marginBottom': '20px'}}>
+                    <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="small" status="accent" variant="text">Button</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="small" status="accent" variant="text" disabled>Button</Button>
+                        </div>
+                    </div>
+                    <div style={{'display': 'flex', 'flexDirection': 'column', 'gap': '20px', 'marginBottom': '20px'}}>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="small" status="success" variant="text">Button</Button>
+                        </div>
+                        <div style={{'textAlign': 'center'}}>
+                            <Button size="small" status="success" variant="text" disabled>Button</Button>
                         </div>
                     </div>
                 </div>

@@ -41,7 +41,7 @@ const MainLayout = () => {
                     <Panel cn="panel panel--bottom">
                         <Search cn="search--page" size="medium" />
                         <Menu {...attrs.menu} /> 
-                        <Profile {...attrs.profile} />
+                        {/* <Profile {...attrs.profile} /> */}
                     </Panel>
                 </Panel>
                 <Panel cn="layout_right">

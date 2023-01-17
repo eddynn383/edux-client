@@ -5,9 +5,6 @@
         grid-template-columns: 300px auto;
         height: 100vh;
         overflow: hidden;
-        @media only screen and (min-width: 1741px) {
-            grid-template-columns: 400px auto;
-        }
         .layout_left {
             display: grid;
             grid-template-rows: 80px auto;

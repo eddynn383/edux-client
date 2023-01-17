@@ -1,5 +1,4 @@
 import './style.scss';
-// import sx from '../../assets/design/component.module.scss'
 
 const Button = ({ cn, id, value, size="medium", theme="light", variant="solid", status="accent", type="button", title, disabled, style, onClick, children }) => {
 
